@@ -1,0 +1,2 @@
+time,root_dist,x,y,z,rel_vel_mag,Re,alpha_deg,alpha_geom_deg,cl,cd,fx,fy,fz,end_effect_factor,c_ref_t,c_ref_n,f_ref_t,f_ref_n
+0.00119048,0.913793,5,-1.97323,2.90411,22.5125,42289.6,-0.671748,9.94791,0.147164,0.0180113,15.8175,-1.39985,0.092718,0.33075,-0.0130986,0.147683,-0.093528,1.0545
