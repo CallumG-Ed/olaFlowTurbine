@@ -129,7 +129,7 @@ turbine
         {
             S826
             {
-                data (#include "../../resources/foilData/S826_1e5_Ostavan");
+                data (#include "../resources/foilData/S826_1e5_Ostavan");
             }
             cylinder
             {

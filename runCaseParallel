@@ -1,5 +1,9 @@
 #!/bin/bash
 
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+nProc=$(sed -ne 's/^numberOfSubdomains *\(.*\);/\1/p' system/decomposeParDict)
+
+
 # Choice
 echo Select a choice:
 echo  "(1) Waves and forward current"
@@ -45,30 +49,29 @@ fi
 echo blockMesh meshing...
 blockMesh > blockMesh.log
 
-echo snappyHexMesh meshing...
-runApplication snappyHexMesh -overwrite
-
-echo topoSet...
-runApplication topoSet
-
-echo Setting the fields...
-setFields > setFields.log
-
 echo Decomposing ...
-decomposePar > decomposePar.log
+decomposePar -decomposeParDict system/decomposeParDict  > decomposePar.log
 
-echo Running...
-nProc=$(sed -ne 's/^numberOfSubdomains *\(.*\);/\1/p' system/decomposeParDict)
-mpirun -np $nProc olaDyMFlow -parallel > olaDyMFlowTurbine.log
-
-echo Reconstructing ...
-cd processor0
-latestTime="$(ls | grep '^[0-9]\+' | sort -n | tail -n1)"
-cd ..
-for i in $(seq 0 1 $latestTime); do
-  reconstructPar -time $i >> reconstructPar.log;
-done
-
-touch currentWavemakerFlume_3D.foam
-
-echo Simulation complete.
+# echo snappyHexMesh meshing...
+# runParallel snappyHexMesh -decomposeParDict system/decomposeParDict -profiling -overwrite > snappyHexMesh.log
+#
+# echo topoSet...
+# topoSet > topoSet.log
+#
+# echo Setting the fields...
+# setFields > setFields.log
+#
+# echo Running...
+# mpirun -np $nProc olaDyMFlow -parallel > olaDyMFlowTurbine.log
+#
+# echo Reconstructing ...
+# cd processor0
+# latestTime="$(ls | grep '^[0-9]\+' | sort -n | tail -n1)"
+# cd ..
+# for i in $(seq 0 1 $latestTime); do
+#   reconstructPar -time $i >> reconstructPar.log;
+# done
+#
+# touch currentWavemakerFlume_3D.foam
+#
+# echo Simulation complete.

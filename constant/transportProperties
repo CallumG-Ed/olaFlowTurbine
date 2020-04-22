@@ -15,6 +15,10 @@ FoamFile
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
+transportModel  Newtonian;
+
+nu              [0 2 -1 0 0 0 0] 1e-06;
+
 phases (water air);
 
 water
