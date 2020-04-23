@@ -32,6 +32,7 @@ turbine
         freeStreamVelocity  (5 0 0);
         tipSpeedRatio       5.0;
         rotorRadius         0.45;
+        rhoRef              1000;
 
         dynamicStall
         {
@@ -103,7 +104,7 @@ turbine
         tower
         {
             includeInTotalDrag  false; // default is false
-            nElements   6;
+            nElements   0;
             elementProfiles (cylinder);
             elementData
             ( // axial distance (turbine axis), height, diameter
@@ -120,8 +121,8 @@ turbine
             elementProfiles (cylinder);
             elementData
             ( // axial distance, height, diameter
-                (0 0.09 0.09)
-                (0 -0.09 0.09)
+                (5 0.09 0.09)
+                (5 -0.09 0.09)
             );
         }
 
