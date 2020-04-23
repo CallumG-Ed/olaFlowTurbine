@@ -54,7 +54,7 @@ topoSet
 echo Setting the fields...
 setFields > setFields.log
 
-echo Running...
-olaFlow > olaFlow.log
-
-echo Simulation complete.
+# echo Running...
+# olaFlow > olaFlow.log
+#
+# echo Simulation complete.

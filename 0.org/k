@@ -42,8 +42,9 @@ boundaryField
 
     atmosphere
     {
-        type            kqRWallFunction;
-        value           uniform 0.0;
+        type            inletOutlet;
+        inletValue      uniform 0.1;
+        value           uniform 0.1;
     }
 
     bottom
