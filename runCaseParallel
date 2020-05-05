@@ -51,6 +51,8 @@ blockMesh > blockMesh.log
 echo snappyHexMesh meshing...
 snappyHexMesh -overwrite > snappyHexMesh.log
 
+checkMesh
+
 echo topoSet...
 topoSet > topoSet.log
 
@@ -67,7 +69,7 @@ echo Reconstructing ...
 cd processor0
 latestTime="$(ls | grep '^[0-9]\+' | sort -n | tail -n1)"
 cd ..
-for i in $(seq 0 1 $latestTime); do
+for i in $(seq 0 0.25 $latestTime); do
   reconstructPar -time $i >> reconstructPar.log;
 done
 

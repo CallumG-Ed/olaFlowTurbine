@@ -38,7 +38,8 @@ boundaryField
 
     frontAndBack
     {
-        type            empty;
+        type            epsilonWallFunction;
+        value           uniform $turbulentEpsilon;
     }
 
     atmosphere

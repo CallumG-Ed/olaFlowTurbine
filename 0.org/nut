@@ -35,7 +35,8 @@ boundaryField
 
     frontAndBack
     {
-        type            empty;
+        type            nutkWallFunction;
+        value           uniform 0;
     }
 
     atmosphere

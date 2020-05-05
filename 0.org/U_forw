@@ -45,7 +45,8 @@ boundaryField
     }
     frontAndBack
     {
-        type            empty;
+        type            fixedValue;
+        value           uniform (0 0 0);
     }
 }
 

@@ -32,24 +32,24 @@ geometry
     turbine
     {
         type searchableCylinder;
-        point1 (4.75 -2 0);
-        point2 (5.25 -2 0);
-        radius 0.75;
+        point1 (4.75 -2 1);
+        point2 (5.25 -2 1);
+        radius 0.7;
     }
 
     tower
     {
         type searchableCylinder;
-        point1 (5 -2 4);
-        point2 (5 -2 2.5);
+        point1 (5.14 -2 1.5);
+        point2 (5.14 -2 1);
         radius 0.1;
     }
 
     turb_zone
     {
         type searchableBox;
-        min (4.1 -2.9 1.7);
-        max (6.3 -1.1 4);
+        min (4.0  -3.0  0.0);
+        max (6.5  -1.0  1.7);
     }
 };
 
@@ -162,7 +162,7 @@ castellatedMeshControls
     // section reachable from the locationInMesh is kept.
     // NOTE: This point should never be on a face, always inside a cell, even
     // after refinement.
-    locationInMesh (0.3124 0 0);
+    locationInMesh (5.3124 -2 1);
 
     // Whether any faceZones (as specified in the refinementSurfaces)
     // are only on the boundary of corresponding cellZones or also allow

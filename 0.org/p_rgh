@@ -22,14 +22,15 @@ boundaryField
 {
     frontAndBack
     {
-        type            empty;
+        type            fixedFluxPressure;
+        value           uniform 0;
     }
-    outlet 
+    outlet
     {
         type            fixedFluxPressure;
         value           uniform 0;
     }
-    inlet 
+    inlet
     {
         type            fixedFluxPressure;
         value           uniform 0;
@@ -39,7 +40,7 @@ boundaryField
         type            fixedFluxPressure;
         value           uniform 0;
     }
-    atmosphere 
+    atmosphere
     {
         type            totalPressure;
         U               U;

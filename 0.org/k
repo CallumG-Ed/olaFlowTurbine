@@ -37,7 +37,8 @@ boundaryField
 
     frontAndBack
     {
-        type            empty;
+        type            kqRWallFunction;
+        value           uniform 0.0;
     }
 
     atmosphere
