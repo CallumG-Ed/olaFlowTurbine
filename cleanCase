@@ -19,6 +19,7 @@ fi
 rm -fr *[0-9].[0-9]* [0-9] [1-6]*
 rm -fr pro*
 rm -fr postProcessing
+rm -fr logs
 rm *.log
 rm *.foam
 rm system/setFieldsDict constant/waveDict

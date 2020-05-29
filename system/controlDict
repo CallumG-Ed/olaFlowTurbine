@@ -58,4 +58,12 @@ libs
     "libturbinesFoam.so"
 );
 
+DebugSwitches
+{
+    axialFlowTurbineALSource 1;  // Any value greater than 0 activates
+    actuatorLineSource  1;
+    actuatorLineElement 1;
+    LeishmanBeddoes 0;
+}
+
 // ************************************************************************* //

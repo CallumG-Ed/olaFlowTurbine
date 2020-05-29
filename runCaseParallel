@@ -2,6 +2,7 @@
 
 . $WM_PROJECT_DIR/bin/tools/RunFunctions
 nProc=$(sed -ne 's/^numberOfSubdomains *\(.*\);/\1/p' system/decomposeParDict)
+mkdir logs
 
 # Choice
 echo Select a choice:
@@ -46,32 +47,33 @@ then
 fi
 
 echo blockMesh meshing...
-blockMesh > blockMesh.log
+blockMesh > logs/blockMesh.log
 
 echo snappyHexMesh meshing...
-snappyHexMesh -overwrite > snappyHexMesh.log
+snappyHexMesh -overwrite > logs/snappyHexMesh.log
 
 checkMesh
 
 echo topoSet...
-topoSet > topoSet.log
+topoSet > logs/topoSet.log
 
 echo Setting the fields...
-setFields > setFields.log
+setFields > logs/setFields.log
 
 echo decomposing...
-decomposePar > decomposePar.log
+decomposePar > logs/decomposePar.log
 
 echo Running...
-mpirun -np $nProc olaDyMFlow -parallel > olaDyMFlowTurbine.log
+mpirun -np $nProc olaDyMFlow -parallel > logs/olaDyMFlowTurbine.log
 
 echo Reconstructing ...
 cd processor0
 latestTime="$(ls | grep '^[0-9]\+' | sort -n | tail -n1)"
 cd ..
-for i in $(seq 0 0.25 $latestTime); do
-  reconstructPar -time $i >> reconstructPar.log;
+for i in $(seq 0 0.25 30); do
+  reconstructPar -time $i #>> logs/reconstructPar.log;
 done
+rm -fr processor*
 
 touch currentWavemakerFlume_3D.foam
 

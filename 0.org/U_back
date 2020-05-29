@@ -29,8 +29,8 @@ boundaryField
     }
     outlet
     {
-        type            waveAbsorption3DVelocity;
-        uCurrent        (-0.75 0. 0.);
+        type            waveAbsorption2DVelocity;
+        uCurrent        (-0.8 0. 0.);
         value           uniform (0 0 0);
     }
     bottom

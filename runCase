@@ -45,14 +45,6 @@ fi
 echo blockMesh meshing...
 blockMesh > blockMesh.log
 
-echo snappyHexMesh meshing...
-snappyHexMesh -overwrite > snappyHexMesh.log
-
-checkMesh
-
-echo topoSet...
-topoSet
-
 echo Setting the fields...
 setFields > setFields.log
 
@@ -60,3 +52,4 @@ echo Running...
 olaFlow > olaFlow.log
 
 echo Simulation complete.
+
