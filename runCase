@@ -1,5 +1,7 @@
 #!/bin/bash
 
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
 # Choice
 echo Select a choice:
 echo  "(1) Waves and forward current"
@@ -15,6 +17,7 @@ then
     exit
 fi
 
+# Set initial conditions
 echo Preparing 0 folder...
 cp -r 0.org 0
 
@@ -42,14 +45,20 @@ then
     cp constant/waveDict_curr_back constant/waveDict
 fi
 
-echo blockMesh meshing...
-blockMesh > blockMesh.log
 
-echo Setting the fields...
-setFields > setFields.log
+runApplication blockMesh
+runApplication decomposeParDict
+runParallel snappyHexMesh -overwrite
+runApplication reconstructParMesh -constant
+runApplication checkMesh
+runApplication topoSet
+runApplication setFields
+runApplication decomposePar
+runParallel olaDyMFlow $nProc
+runApplication reconstructPar
 
-echo Running...
-olaFlow > olaFlow.log
-
+touch olaFlowTurbine.foam
+mkdir logs
+mv log.* logs
+rm -fr pro*
 echo Simulation complete.
-
