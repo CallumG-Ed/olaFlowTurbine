@@ -47,9 +47,12 @@ fi
 
 
 runApplication blockMesh
-runApplication decomposeParDict
+runApplication decomposePar
 runParallel snappyHexMesh -overwrite
 runApplication reconstructParMesh -constant
+mv log.decomposePar log.decomposeParMesh
+rm -fr pro*
+
 runApplication checkMesh
 runApplication topoSet
 runApplication setFields
@@ -61,4 +64,5 @@ touch olaFlowTurbine.foam
 mkdir logs
 mv log.* logs
 rm -fr pro*
+
 echo Simulation complete.
