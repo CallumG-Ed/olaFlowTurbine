@@ -3,66 +3,83 @@
 . $WM_PROJECT_DIR/bin/tools/RunFunctions
 
 # Choice
-echo Select a choice:
-echo  "(1) Waves and forward current"
-echo  "(2) Waves and backward current"
-echo  "(3) Forward current only"
-echo  "(4) Backward current only"
-read -p " " -n 1 -r reply
-echo ' '
+# "(1) Waves and forward current"
+# "(2) Waves and backward current"
+# "(3) Forward current only"
+# "(4) Backward current only"
 
-if ! [[ $reply =~ ^[1234]$ ]]
-then
-    echo Invalid choice
-    exit
+# choose 1, 2, 3 or 4
+reply=1
+
+endTime=$(foamDictionary -value -entry endTime system/controlDict)
+directory="./processor0/"
+
+if [ -d "$directory" ]; then
+
+  # Running
+  latestTime=$(foamListTimes -latestTime -processor)
+  echo "Attempting to restart solver from time $latestTime ..."
+  mv log.olaDyMFlow log.olaDyMFlow$latestTime
+  runParallel olaDyMFlow
+
+else
+
+  # Set initial conditions
+  echo Preparing 0 folder...
+  cp -r 0.org 0
+
+  # Make choice changes
+  echo Making case adjustments...
+  if [ $reply == "1" ];
+  then
+      cp 0/U_forw 0/U
+      cp system/setFieldsDict_forw system/setFieldsDict
+      cp constant/waveDict_wave_forw constant/waveDict
+  elif [ $reply == "2" ];
+  then
+      cp 0/U_back 0/U
+      cp system/setFieldsDict_back system/setFieldsDict
+      cp constant/waveDict_wave_back constant/waveDict
+  elif [ $reply == "3" ];
+  then
+      cp 0/U_forw 0/U
+      cp system/setFieldsDict_forw system/setFieldsDict
+      cp constant/waveDict_curr_forw constant/waveDict
+  elif [ $reply == "4" ];
+  then
+      cp 0/U_back 0/U
+      cp system/setFieldsDict_back system/setFieldsDict
+      cp constant/waveDict_curr_back constant/waveDict
+  fi
+
+  # Meshing
+  runApplication blockMesh
+  runApplication decomposePar
+  runParallel snappyHexMesh -overwrite
+  runApplication reconstructParMesh -constant
+  mv log.decomposePar log.decomposeParMesh
+  rm -fr pro*
+  runApplication checkMesh
+
+  # Running
+  runApplication topoSet
+  runApplication setFields
+  runApplication decomposePar
+  runParallel olaDyMFlow
+
 fi
 
-# Set initial conditions
-echo Preparing 0 folder...
-cp -r 0.org 0
+if [ -d "$directory$endTime" ]; then
 
-# Make choice changes
-echo Making case adjustments...
-if [ $reply == "1" ];
-then
-    cp 0/U_forw 0/U
-    cp system/setFieldsDict_forw system/setFieldsDict
-    cp constant/waveDict_wave_forw constant/waveDict
-elif [ $reply == "2" ];
-then
-    cp 0/U_back 0/U
-    cp system/setFieldsDict_back system/setFieldsDict
-    cp constant/waveDict_wave_back constant/waveDict
-elif [ $reply == "3" ];
-then
-    cp 0/U_forw 0/U
-    cp system/setFieldsDict_forw system/setFieldsDict
-    cp constant/waveDict_curr_forw constant/waveDict
-elif [ $reply == "4" ];
-then
-    cp 0/U_back 0/U
-    cp system/setFieldsDict_back system/setFieldsDict
-    cp constant/waveDict_curr_back constant/waveDict
+  # reconstructing
+  runApplication reconstructPar
+
+  # Cleaning directory
+  touch olaFlowTurbine.foam
+  mkdir logs
+  mv log.* logs
+  rm -fr pro*
+
+  echo Simulation complete.
+
 fi
-
-
-runApplication blockMesh
-runApplication decomposePar
-runParallel snappyHexMesh -overwrite
-runApplication reconstructParMesh -constant
-mv log.decomposePar log.decomposeParMesh
-rm -fr pro*
-
-runApplication checkMesh
-runApplication topoSet
-runApplication setFields
-runApplication decomposePar
-runParallel olaDyMFlow $nProc
-runApplication reconstructPar
-
-touch olaFlowTurbine.foam
-mkdir logs
-mv log.* logs
-rm -fr pro*
-
-echo Simulation complete.

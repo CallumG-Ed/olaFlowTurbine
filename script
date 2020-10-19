@@ -1,0 +1,26 @@
+#!/bin/bash
+#endTime = `grep endTime system/controlDict | sed 's/;//' | tr -s " " | cut -d" " -f2`
+
+
+latestTime=$(foamListTimes -latestTime)
+mv callum callum$latestTime
+
+# endTime=`grep endTime system/controlDict | grep -v "endTime;" | sed 's/;//' | tr -s " " | cut -d" " -f2`
+# echo $endTime
+#
+#
+#
+# endTime=$(foamDictionary -value -entry endTime system/controlDict)
+# echo $endTime
+#
+# endTime=$(foamDictionary -value -entry endTime system/controlDict 2>/dev/null)
+# echo $endTime
+# endTime=$(foamListTimes -endTime)
+# echo $endTime
+
+
+#
+# if endTime=$(foamDictionary -value -entry endTime system/controlDict 2>/dev/null)
+# then
+#     echo "endTime was $endTime"
+# fi
