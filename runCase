@@ -9,7 +9,7 @@
 # "(4) Backward current only"
 
 # choose 1, 2, 3 or 4
-reply=1
+reply=3
 
 endTime=$(foamDictionary -value -entry endTime system/controlDict)
 directory="./processor0/"
