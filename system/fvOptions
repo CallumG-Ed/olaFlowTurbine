@@ -67,29 +67,29 @@ turbine
                 nElements   46;
                 elementProfiles
                 (
-                    NACA_63418_Re0_01e6
-                    NACA_63418_Re0_01e6
-                    NACA_63418_Re0_01e6
-                    NACA_63418_Re0_04e6
-                    NACA_63418_Re0_07e6
-                    NACA_63418_Re0_07e6
-                    NACA_63418_Re0_07e6
-                    NACA_63418_Re0_07e6
-                    NACA_63418_Re0_07e6
-                    NACA_63418_Re0_08e6
-                    NACA_63418_Re0_08e6
-                    NACA_63418_Re0_08e6
-                    NACA_63418_Re0_08e6
-                    NACA_63418_Re0_08e6
-                    NACA_63418_Re0_08e6
-                    NACA_63418_Re0_08e6
-                    NACA_63418_Re0_08e6
-                    NACA_63418_Re0_09e6
-                    NACA_63418_Re0_09e6
-                    NACA_63418_Re0_09e6
-                    NACA_63418_Re0_09e6
-                    NACA_63418_Re0_09e6
-                    NACA_63418_Re0_05e6
+                    NACA_63418_Re0_13e6
+                    NACA_63418_Re0_13e6
+                    NACA_63418_Re0_13e6
+                    NACA_63418_Re0_13e6
+                    NACA_63418_Re0_13e6
+                    NACA_63418_Re0_13e6
+                    NACA_63418_Re0_13e6
+                    NACA_63418_Re0_13e6
+                    NACA_63418_Re0_13e6
+                    NACA_63418_Re0_13e6
+                    NACA_63418_Re0_13e6
+                    NACA_63418_Re0_13e6
+                    NACA_63418_Re0_13e6
+                    NACA_63418_Re0_13e6
+                    NACA_63418_Re0_13e6
+                    NACA_63418_Re0_13e6
+                    NACA_63418_Re0_13e6
+                    NACA_63418_Re0_13e6
+                    NACA_63418_Re0_13e6
+                    NACA_63418_Re0_13e6
+                    NACA_63418_Re0_13e6
+                    NACA_63418_Re0_13e6
+                    NACA_63418_Re0_13e6
                 );
                 elementData
                 (

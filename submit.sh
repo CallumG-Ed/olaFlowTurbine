@@ -1,6 +1,6 @@
 #!/bin/sh
 # Grid Engine
-#$ -N olaFlowTurbine
+#$ -N olaFlowTurbine_Mesh_Ind_Coarse
 #$ -cwd
 #$ -pe mpi 32 -R y
 #$ -l h_vmem=4G
