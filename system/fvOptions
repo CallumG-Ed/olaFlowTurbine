@@ -99,8 +99,8 @@ turbine
             blade2
             {
                 $blade1;
-                writePerf   false;
-                writeElementPerf false;
+                //writePerf   false;
+                //writeElementPerf false;
                 azimuthalOffset 120.0;
             }
             blade3
