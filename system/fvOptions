@@ -67,29 +67,29 @@ turbine
                 nElements   46;
                 elementProfiles
                 (
-                    NACA_63418_Re0_13e6
-                    NACA_63418_Re0_13e6
-                    NACA_63418_Re0_13e6
-                    NACA_63418_Re0_13e6
-                    NACA_63418_Re0_13e6
-                    NACA_63418_Re0_13e6
-                    NACA_63418_Re0_13e6
-                    NACA_63418_Re0_13e6
-                    NACA_63418_Re0_13e6
-                    NACA_63418_Re0_13e6
-                    NACA_63418_Re0_13e6
-                    NACA_63418_Re0_13e6
-                    NACA_63418_Re0_13e6
-                    NACA_63418_Re0_13e6
-                    NACA_63418_Re0_13e6
-                    NACA_63418_Re0_13e6
-                    NACA_63418_Re0_13e6
-                    NACA_63418_Re0_13e6
-                    NACA_63418_Re0_13e6
-                    NACA_63418_Re0_13e6
-                    NACA_63418_Re0_13e6
-                    NACA_63418_Re0_13e6
-                    NACA_63418_Re0_13e6
+                    NACA_63418_Re0_05e6
+                    NACA_63418_Re0_05e6
+                    NACA_63418_Re0_05e6
+                    NACA_63418_Re0_05e6
+                    NACA_63418_Re0_1e6
+                    NACA_63418_Re0_1e6
+                    NACA_63418_Re0_1e6
+                    NACA_63418_Re0_1e6
+                    NACA_63418_Re0_1e6
+                    NACA_63418_Re0_1e6
+                    NACA_63418_Re0_1e6
+                    NACA_63418_Re0_1e6
+                    NACA_63418_Re0_1e6
+                    NACA_63418_Re0_1e6
+                    NACA_63418_Re0_1e6
+                    NACA_63418_Re0_1e6
+                    NACA_63418_Re0_1e6
+                    NACA_63418_Re0_1e6
+                    NACA_63418_Re0_1e6
+                    NACA_63418_Re0_1e6
+                    NACA_63418_Re0_1e6
+                    NACA_63418_Re0_1e6
+                    NACA_63418_Re0_05e6
                 );
                 elementData
                 (
