@@ -113,7 +113,7 @@ turbine
         tower
         {
             includeInTotalDrag  false; // default is false
-            nElements   0;
+            nElements   6;
             elementProfiles (cylinder);
             elementData
             ( // axial distance (turbine axis), height, diameter
@@ -124,7 +124,7 @@ turbine
 
         hub
         {
-            nElements   6;
+            nElements   1;
             elementProfiles (cylinder);
             elementData
             ( // axial distance, height, diameter

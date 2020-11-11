@@ -40,9 +40,9 @@ geometry
     tower
     {
         type searchableCylinder;
-        point1 (5.14 -2 1.5);
-        point2 (5.14 -2 1);
-        radius 0.1;
+        point1 (5.5 -2 1.5);
+        point2 (5.5 -2 1);
+        radius 0.2;
     }
 
     turb_zone
