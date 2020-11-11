@@ -146,6 +146,12 @@ castellatedMeshControls
             levels ((1e15 2));
         }
 
+        tower
+        {
+            mode        inside;
+            levels      ((1e15 2));
+        }
+
         turb_zone
         {
             mode        inside;
