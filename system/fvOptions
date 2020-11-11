@@ -142,7 +142,7 @@ turbine
             }
             NACA_63418_Re0_10e6
             {
-                data (#include "../resources/foilData/NACA_63418_Re0_1e6");
+                data (#include "../resources/foilData/NACA_63418_Re0_10e6");
             }
             NACA_63418_Re0_15e6
             {
@@ -150,7 +150,7 @@ turbine
             }
             NACA_63418_Re0_20e6
             {
-                data (#include "../resources/foilData/NACA_63418_Re0_15e6");
+                data (#include "../resources/foilData/NACA_63418_Re0_20e6");
             }
             cylinder
             {
