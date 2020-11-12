@@ -1,6 +1,6 @@
 #!/bin/sh
 # Grid Engine
-#$ -N olaFlowTurbine_TSR6_noWaves
+#$ -N olaFlowTurbine_TSR7_noWaves
 #$ -cwd
 #$ -pe mpi 32 -R y
 #$ -l h_vmem=4G
