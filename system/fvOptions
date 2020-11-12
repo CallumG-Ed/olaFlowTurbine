@@ -30,7 +30,7 @@ turbine
         axis                (-1 0 0);
         verticalDirection   (0 0 1);
         freeStreamVelocity  (0.8 0 0);
-        tipSpeedRatio       7.0;
+        tipSpeedRatio       4.0;
         rotorRadius         0.362;
         rhoRef              998.57;
 
@@ -70,26 +70,26 @@ turbine
                     NACA_63418_Re0_05e6
                     NACA_63418_Re0_05e6
                     NACA_63418_Re0_05e6
-                    NACA_63418_Re0_15e6
-                    NACA_63418_Re0_15e6
-                    NACA_63418_Re0_15e6
-                    NACA_63418_Re0_15e6
-                    NACA_63418_Re0_15e6
-                    NACA_63418_Re0_20e6
-                    NACA_63418_Re0_20e6
-                    NACA_63418_Re0_20e6
-                    NACA_63418_Re0_20e6
-                    NACA_63418_Re0_20e6
-                    NACA_63418_Re0_20e6
-                    NACA_63418_Re0_20e6
-                    NACA_63418_Re0_20e6
-                    NACA_63418_Re0_20e6
-                    NACA_63418_Re0_20e6
-                    NACA_63418_Re0_20e6
-                    NACA_63418_Re0_20e6
-                    NACA_63418_Re0_20e6
-                    NACA_63418_Re0_20e6
+                    NACA_63418_Re0_05e6
                     NACA_63418_Re0_10e6
+                    NACA_63418_Re0_10e6
+                    NACA_63418_Re0_10e6
+                    NACA_63418_Re0_10e6
+                    NACA_63418_Re0_10e6
+                    NACA_63418_Re0_10e6
+                    NACA_63418_Re0_10e6
+                    NACA_63418_Re0_10e6
+                    NACA_63418_Re0_10e6
+                    NACA_63418_Re0_10e6
+                    NACA_63418_Re0_10e6
+                    NACA_63418_Re0_10e6
+                    NACA_63418_Re0_10e6
+                    NACA_63418_Re0_10e6
+                    NACA_63418_Re0_15e6
+                    NACA_63418_Re0_15e6
+                    NACA_63418_Re0_15e6
+                    NACA_63418_Re0_15e6
+                    NACA_63418_Re0_05e6
                 );
                 elementData
                 (
