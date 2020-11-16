@@ -15,6 +15,7 @@ FoamFile
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
+#include "../setup"
 
 turbine
 {
@@ -29,8 +30,8 @@ turbine
         origin              (5 -2 1);
         axis                (-1 0 0);
         verticalDirection   (0 0 1);
-        freeStreamVelocity  (0.8 0 0);
-        tipSpeedRatio       4.0;
+        freeStreamVelocity  $current;
+        tipSpeedRatio       $TSR;
         rotorRadius         0.362;
         rhoRef              998.57;
 
@@ -65,32 +66,7 @@ turbine
                 writePerf   true;
                 writeElementPerf true;
                 nElements   46;
-                elementProfiles
-                (
-                    NACA_63418_Re0_05e6
-                    NACA_63418_Re0_05e6
-                    NACA_63418_Re0_05e6
-                    NACA_63418_Re0_05e6
-                    NACA_63418_Re0_10e6
-                    NACA_63418_Re0_10e6
-                    NACA_63418_Re0_10e6
-                    NACA_63418_Re0_10e6
-                    NACA_63418_Re0_10e6
-                    NACA_63418_Re0_10e6
-                    NACA_63418_Re0_10e6
-                    NACA_63418_Re0_10e6
-                    NACA_63418_Re0_10e6
-                    NACA_63418_Re0_10e6
-                    NACA_63418_Re0_10e6
-                    NACA_63418_Re0_10e6
-                    NACA_63418_Re0_10e6
-                    NACA_63418_Re0_10e6
-                    NACA_63418_Re0_15e6
-                    NACA_63418_Re0_15e6
-                    NACA_63418_Re0_15e6
-                    NACA_63418_Re0_15e6
-                    NACA_63418_Re0_05e6
-                );
+                elementProfiles $elementProfiles;
                 elementData
                 (
                     #include "elementData"
@@ -126,10 +102,11 @@ turbine
         {
             nElements   1;
             elementProfiles (cylinder);
+            //Info << "\n\n\n\n\n\nHub Radius: " << ${hubRadius} << "\n\n\n";
             elementData
             ( // axial distance, height, diameter
-                (0  0.05865 0.05865)
-                (0 -0.05865 0.05865)
+                (0   0.05865  0.05865)
+                (0  -0.05865  0.05865)
             );
         }
 

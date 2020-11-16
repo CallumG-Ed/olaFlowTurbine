@@ -1,0 +1,59 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  1906                                   |
+|   \\  /    A nd           | Web:      http://www.openfoam.com               |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+
+// Choice
+// "(1) Waves and forward current"
+// "(2) Waves and backward current"
+// "(3) Forward current only"
+// "(4) Backward current only"
+choice 1;
+
+
+nCores 8; // Number of compute cores to solve on
+
+
+// Discretisation of global domain in streamwise (x), spanwise (y), verticle (z)
+nx    50;  // 166 for 15mm turbine elements
+ny    20;  //  67 for 15mm turbine elements
+nz    15;  //  50 for 15mm turbine elements
+
+
+// Turbine parameters
+TSR               4.0; // tip speed ratio
+current     (0.8 0 0); // current velocity (x,y,z)
+elementProfiles        // element profile polar files
+(
+    NACA_63418_Re0_05e6
+    NACA_63418_Re0_05e6
+    NACA_63418_Re0_05e6
+    NACA_63418_Re0_05e6
+    NACA_63418_Re0_10e6
+    NACA_63418_Re0_10e6
+    NACA_63418_Re0_10e6
+    NACA_63418_Re0_10e6
+    NACA_63418_Re0_10e6
+    NACA_63418_Re0_10e6
+    NACA_63418_Re0_10e6
+    NACA_63418_Re0_10e6
+    NACA_63418_Re0_10e6
+    NACA_63418_Re0_10e6
+    NACA_63418_Re0_10e6
+    NACA_63418_Re0_10e6
+    NACA_63418_Re0_10e6
+    NACA_63418_Re0_10e6
+    NACA_63418_Re0_15e6
+    NACA_63418_Re0_15e6
+    NACA_63418_Re0_15e6
+    NACA_63418_Re0_15e6
+    NACA_63418_Re0_05e6
+);
+
+
+// Run parameters
+simEnd      10; // simulation end time
+dT       0.001; // time step

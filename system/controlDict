@@ -16,6 +16,8 @@ FoamFile
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
+#include "../setup"
+
 application     olaFlow;
 
 startFrom       latestTime;
@@ -24,9 +26,9 @@ startTime       0;
 
 stopAt          endTime;
 
-endTime         10;
+endTime         $simEnd;
 
-deltaT          0.001;
+deltaT          $dT;
 
 writeControl    adjustableRunTime;
 

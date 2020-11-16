@@ -8,9 +8,8 @@
 # "(3) Forward current only"
 # "(4) Backward current only"
 
-# choose 1, 2, 3 or 4
-reply=3
-
+# choose 1, 2, 3 or 4 for different simulation types
+reply="$(grep "choice" setup | sed 's/;//' | tr -s " " | cut -d" " -f2)"
 endTime=$(foamDictionary -value -entry endTime system/controlDict)
 directory="./processor0/"
 

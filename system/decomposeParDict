@@ -15,7 +15,9 @@ FoamFile
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-numberOfSubdomains 32;
+#include "../setup"
+
+numberOfSubdomains $nCores;
 
 method          scotch;
 
