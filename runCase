@@ -53,11 +53,7 @@ else
 
   # Meshing
   runApplication blockMesh
-  runApplication decomposePar
-  runParallel snappyHexMesh -overwrite
-  runApplication reconstructParMesh -constant
-  mv log.decomposePar log.decomposeParMesh
-  rm -fr pro*
+  runApplication snappyHexMesh -overwrite
   runApplication checkMesh
 
   #Running
