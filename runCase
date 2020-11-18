@@ -60,7 +60,7 @@ else
   rm -fr pro*
   runApplication checkMesh
 
-  # Running
+  #Running
   runApplication topoSet
   runApplication setFields
   runApplication decomposePar

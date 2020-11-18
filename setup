@@ -18,9 +18,9 @@ nCores 32; // Number of compute cores to solve on
 
 
 // Discretisation of global domain in streamwise (x), spanwise (y), verticle (z)
-nx    100;  // 166 for 15mm turbine elements
-ny     60;   //  67 for 15mm turbine elements
-nz     40;   //  50 for 15mm turbine elements
+nx    100;   
+ny     60;   
+nz     30;   
 
 
 // Turbine parameters

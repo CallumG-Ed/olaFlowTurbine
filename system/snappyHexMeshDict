@@ -52,12 +52,12 @@ geometry
         max (7.0  -1.0  1.7);
     }
 
-    // free_surface
-    // {
-    //     type searchableBox;
-    //     min (0.0  -4.0  1.5);
-    //     max (10.0  0.0  2.5);
-    // }
+    free_surface
+    {
+       type searchableBox;
+       min (0.0  -4.0  1.5);
+       max (10.0  0.0  2.5);
+    }
 };
 
 
@@ -165,11 +165,11 @@ castellatedMeshControls
             levels      ((1e15 1));
         }
 
-        // free_surface
-        // {
-        //     mode        inside;
-        //     levels      ((1e15 2));
-        // }
+        free_surface
+        {
+           mode        inside;
+           levels      ((1e15 2));
+        }
     }
 
 
