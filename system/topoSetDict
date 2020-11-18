@@ -39,8 +39,8 @@ actions
         sourceInfo
         {
             type cylinder;
-            p1 (5.14 -2 3);
-            p2 (5.14 -2 1);
+            p1 (5.5 -2 3);
+            p2 (5.5 -2 1);
             radius 0.1;
         }
     }

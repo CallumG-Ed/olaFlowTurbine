@@ -18,9 +18,9 @@ nCores 32; // Number of compute cores to solve on
 
 
 // Discretisation of global domain in streamwise (x), spanwise (y), verticle (z)
-nx    166;  // 166 for 15mm turbine elements
-ny    67;   //  67 for 15mm turbine elements
-nz    50;   //  50 for 15mm turbine elements
+nx    100;  // 166 for 15mm turbine elements
+ny     60;   //  67 for 15mm turbine elements
+nz     40;   //  50 for 15mm turbine elements
 
 
 // Turbine parameters
@@ -56,4 +56,4 @@ elementProfiles        // element profile polar files
 
 // Run parameters
 simEnd      10; // simulation end time
-dT       0.005; // time step
+dT       0.001; // time step

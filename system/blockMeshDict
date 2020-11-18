@@ -33,7 +33,7 @@ vertices
 
 blocks
 (
-    hex (0 1 5 4 3 2 6 7)   ($nx $ny $nz) simpleGrading (1 1 1) 
+    hex (0 1 5 4 3 2 6 7)   ($nx $ny $nz) simpleGrading (1 1 1)
 );
 
 edges
