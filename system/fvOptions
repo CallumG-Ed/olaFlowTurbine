@@ -65,7 +65,7 @@ turbine
             {
                 writePerf   true;
                 writeElementPerf true;
-                nElements   46;
+                nElements   23;
                 elementProfiles $elementProfiles;
                 elementData
                 (

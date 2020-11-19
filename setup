@@ -18,10 +18,13 @@ nCores 32; // Number of compute cores to solve on
 
 
 // Discretisation of global domain in streamwise (x), spanwise (y), verticle (z)
-nx    100;   
-ny     60;   
-nz     30;   
+nx     100;
+ny      40;
+nz      30;
 
+// free surface refinement region. (fs_z1) bottom and (fs_z2) top.
+fs_z1   1.65;
+fs_z2   2.05;
 
 // Turbine parameters
 TSR               4.0; // tip speed ratio
@@ -55,5 +58,5 @@ elementProfiles        // element profile polar files
 
 
 // Run parameters
-simEnd      10; // simulation end time
+simEnd      15; // simulation end time
 dT       0.001; // time step
