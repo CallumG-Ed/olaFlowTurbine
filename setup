@@ -28,7 +28,7 @@ fs_z2   2.05;
 
 // Turbine parameters
 TSR               4.0; // tip speed ratio
-current     (0.8 0 0); // current velocity (x,y,z)
+current     (0.81 0 0); // current velocity (x,y,z)
 elementProfiles        // element profile polar files
 (
     NACA_63418_Re0_05e6

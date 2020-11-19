@@ -30,7 +30,7 @@ boundaryField
     outlet
     {
         type            waveAbsorption2DVelocity;
-        uCurrent        (0.8 0. 0.);
+        uCurrent        (0.81 0. 0.);
         value           uniform (0 0 0);
     }
     bottom
