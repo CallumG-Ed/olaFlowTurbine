@@ -61,24 +61,24 @@ else
   runApplication checkMesh
 
   #Running
-  # runApplication topoSet
-  # runApplication setFields
-  # runApplication decomposePar
-  # runParallel olaDyMFlow
+  runApplication topoSet
+  runApplication setFields
+  runApplication decomposePar
+  runParallel olaDyMFlow
 
 fi
-# 
-# if [ -d "$directory$endTime" ]; then
-#
-#   # reconstructing
-#   runApplication reconstructPar
-#
-#   # Cleaning directory
-#   touch olaFlowTurbine.foam
-#   mkdir logs
-#   mv log.* logs
-#   rm -fr pro*
-#
-#   echo Simulation complete.
-#
-# fi
+
+if [ -d "$directory$endTime" ]; then
+
+  # reconstructing
+  runApplication reconstructPar
+
+  # Cleaning directory
+  touch olaFlowTurbine.foam
+  mkdir logs
+  mv log.* logs
+  rm -fr pro*
+
+  echo Simulation complete.
+
+fi
