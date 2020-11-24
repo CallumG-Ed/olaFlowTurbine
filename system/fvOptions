@@ -494,13 +494,25 @@ turbine
             {
                 data (#include "../resources/foilData/3D/TSR4/PolarRe0_02e6NCrit9_roR0_1620_3D_extrap.dat");
             }
+            NACA_63418_Re0_05e6_roR0_1620_3D_TSR4
+            {
+                data (#include "../resources/foilData/3D/TSR4/PolarRe0_05e6NCrit9_roR0_1620_3D_extrap.dat");
+            }
             NACA_63418_Re0_02e6_roR0_1782_3D_TSR4
             {
                 data (#include "../resources/foilData/3D/TSR4/PolarRe0_02e6NCrit9_roR0_1782_3D_extrap.dat");
             }
+            NACA_63418_Re0_05e6_roR0_1782_3D_TSR4
+            {
+                data (#include "../resources/foilData/3D/TSR4/PolarRe0_05e6NCrit9_roR0_1782_3D_extrap.dat");
+            }
             NACA_63418_Re0_02e6_roR0_1830_3D_TSR4
             {
                 data (#include "../resources/foilData/3D/TSR4/PolarRe0_02e6NCrit9_roR0_1830_3D_extrap.dat");
+            }
+            NACA_63418_Re0_05e6_roR0_1830_3D_TSR4
+            {
+                data (#include "../resources/foilData/3D/TSR4/PolarRe0_05e6NCrit9_roR0_1830_3D_extrap.dat");
             }
             NACA_63418_Re0_05e6_roR0_2249_3D_TSR4
             {
@@ -522,65 +534,129 @@ turbine
             {
                 data (#include "../resources/foilData/3D/TSR4/PolarRe0_11e6NCrit9_roR0_3925_3D_extrap.dat");
             }
+            NACA_63418_Re0_10e6_roR0_3925_3D_TSR4
+            {
+                data (#include "../resources/foilData/3D/TSR4/PolarRe0_10e6NCrit9_roR0_3925_3D_extrap.dat");
+            }
             NACA_63418_Re0_11e6_roR0_4344_3D_TSR4
             {
                 data (#include "../resources/foilData/3D/TSR4/PolarRe0_11e6NCrit9_roR0_4344_3D_extrap.dat");
+            }
+            NACA_63418_Re0_10e6_roR0_4344_3D_TSR4
+            {
+                data (#include "../resources/foilData/3D/TSR4/PolarRe0_10e6NCrit9_roR0_4344_3D_extrap.dat");
             }
             NACA_63418_Re0_11e6_roR0_4763_3D_TSR4
             {
                 data (#include "../resources/foilData/3D/TSR4/PolarRe0_11e6NCrit9_roR0_4763_3D_extrap.dat");
             }
+            NACA_63418_Re0_10e6_roR0_4763_3D_TSR4
+            {
+                data (#include "../resources/foilData/3D/TSR4/PolarRe0_10e6NCrit9_roR0_4763_3D_extrap.dat");
+            }
             NACA_63418_Re0_11e6_roR0_5182_3D_TSR4
             {
                 data (#include "../resources/foilData/3D/TSR4/PolarRe0_11e6NCrit9_roR0_5182_3D_extrap.dat");
+            }
+            NACA_63418_Re0_10e6_roR0_5182_3D_TSR4
+            {
+                data (#include "../resources/foilData/3D/TSR4/PolarRe0_10e6NCrit9_roR0_5182_3D_extrap.dat");
             }
             NACA_63418_Re0_11e6_roR0_5601_3D_TSR4
             {
                 data (#include "../resources/foilData/3D/TSR4/PolarRe0_11e6NCrit9_roR0_5601_3D_extrap.dat");
             }
+            NACA_63418_Re0_10e6_roR0_5601_3D_TSR4
+            {
+                data (#include "../resources/foilData/3D/TSR4/PolarRe0_10e6NCrit9_roR0_5601_3D_extrap.dat");
+            }
             NACA_63418_Re0_12e6_roR0_6019_3D_TSR4
             {
                 data (#include "../resources/foilData/3D/TSR4/PolarRe0_12e6NCrit9_roR0_6019_3D_extrap.dat");
+            }
+            NACA_63418_Re0_10e6_roR0_6019_3D_TSR4
+            {
+                data (#include "../resources/foilData/3D/TSR4/PolarRe0_10e6NCrit9_roR0_6019_3D_extrap.dat");
             }
             NACA_63418_Re0_12e6_roR0_6439_3D_TSR4
             {
                 data (#include "../resources/foilData/3D/TSR4/PolarRe0_12e6NCrit9_roR0_6439_3D_extrap.dat");
             }
+            NACA_63418_Re0_10e6_roR0_6439_3D_TSR4
+            {
+                data (#include "../resources/foilData/3D/TSR4/PolarRe0_10e6NCrit9_roR0_6439_3D_extrap.dat");
+            }
             NACA_63418_Re0_12e6_roR0_6858_3D_TSR4
             {
                 data (#include "../resources/foilData/3D/TSR4/PolarRe0_12e6NCrit9_roR0_6858_3D_extrap.dat");
+            }
+            NACA_63418_Re0_10e6_roR0_6858_3D_TSR4
+            {
+                data (#include "../resources/foilData/3D/TSR4/PolarRe0_10e6NCrit9_roR0_6858_3D_extrap.dat");
             }
             NACA_63418_Re0_12e6_roR0_7276_3D_TSR4
             {
                 data (#include "../resources/foilData/3D/TSR4/PolarRe0_12e6NCrit9_roR0_7276_3D_extrap.dat");
             }
+            NACA_63418_Re0_10e6_roR0_7276_3D_TSR4
+            {
+                data (#include "../resources/foilData/3D/TSR4/PolarRe0_10e6NCrit9_roR0_7276_3D_extrap.dat");
+            }
             NACA_63418_Re0_12e6_roR0_7696_3D_TSR4
             {
                 data (#include "../resources/foilData/3D/TSR4/PolarRe0_12e6NCrit9_roR0_7696_3D_extrap.dat");
+            }
+            NACA_63418_Re0_10e6_roR0_7696_3D_TSR4
+            {
+                data (#include "../resources/foilData/3D/TSR4/PolarRe0_10e6NCrit9_roR0_7696_3D_extrap.dat");
             }
             NACA_63418_Re0_12e6_roR0_8115_3D_TSR4
             {
                 data (#include "../resources/foilData/3D/TSR4/PolarRe0_12e6NCrit9_roR0_8115_3D_extrap.dat");
             }
+            NACA_63418_Re0_10e6_roR0_8115_3D_TSR4
+            {
+                data (#include "../resources/foilData/3D/TSR4/PolarRe0_10e6NCrit9_roR0_8115_3D_extrap.dat");
+            }
             NACA_63418_Re0_13e6_roR0_8533_3D_TSR4
             {
                 data (#include "../resources/foilData/3D/TSR4/PolarRe0_13e6NCrit9_roR0_8533_3D_extrap.dat");
+            }
+            NACA_63418_Re0_15e6_roR0_8533_3D_TSR4
+            {
+                data (#include "../resources/foilData/3D/TSR4/PolarRe0_15e6NCrit9_roR0_8533_3D_extrap.dat");
             }
             NACA_63418_Re0_13e6_roR0_8953_3D_TSR4
             {
                 data (#include "../resources/foilData/3D/TSR4/PolarRe0_13e6NCrit9_roR0_8953_3D_extrap.dat");
             }
+            NACA_63418_Re0_15e6_roR0_8953_3D_TSR4
+            {
+                data (#include "../resources/foilData/3D/TSR4/PolarRe0_15e6NCrit9_roR0_8953_3D_extrap.dat");
+            }
             NACA_63418_Re0_13e6_roR0_9372_3D_TSR4
             {
                 data (#include "../resources/foilData/3D/TSR4/PolarRe0_13e6NCrit9_roR0_9372_3D_extrap.dat");
+            }
+            NACA_63418_Re0_15e6_roR0_9372_3D_TSR4
+            {
+                data (#include "../resources/foilData/3D/TSR4/PolarRe0_15e6NCrit9_roR0_9372_3D_extrap.dat");
             }
             NACA_63418_Re0_13e6_roR0_9790_3D_TSR4
             {
                 data (#include "../resources/foilData/3D/TSR4/PolarRe0_13e6NCrit9_roR0_9790_3D_extrap.dat");
             }
+            NACA_63418_Re0_15e6_roR0_9790_3D_TSR4
+            {
+                data (#include "../resources/foilData/3D/TSR4/PolarRe0_15e6NCrit9_roR0_9790_3D_extrap.dat");
+            }
             NACA_63418_Re0_07e6_roR1_0000_3D_TSR4
             {
                 data (#include "../resources/foilData/3D/TSR4/PolarRe0_07e6NCrit9_roR1_0000_3D_extrap.dat");
+            }
+            NACA_63418_Re0_05e6_roR1_0000_3D_TSR4
+            {
+                data (#include "../resources/foilData/3D/TSR4/PolarRe0_05e6NCrit9_roR1_0000_3D_extrap.dat");
             }
 
 
