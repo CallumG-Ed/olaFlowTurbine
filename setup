@@ -18,9 +18,9 @@ nCores 32; // Number of compute cores to solve on
 
 
 // Discretisation of global domain in streamwise (x), spanwise (y), verticle (z)
-nx     100;
-ny      40;
-nz      30;
+nx    100;
+ny     40;
+nz     30;
 
 // free surface refinement region. (fs_z1) bottom and (fs_z2) top.
 fs_z1   1.65;
