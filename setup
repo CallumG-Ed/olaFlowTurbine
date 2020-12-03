@@ -13,14 +13,19 @@
 // "(4) Backward current only"
 choice 3;
 
+// Turbine
+// "(1) IFREMER gen2"
+// "(2) SuperGen Xmed"
+turbine 2;
 
-nCores 32; // Number of compute cores to solve on
+
+nCores 8; // Number of compute cores to solve on
 
 
 // Discretisation of global domain in streamwise (x), spanwise (y), verticle (z)
-nx    100;
-ny     40;
-nz     30;
+nx     50;
+ny     20;
+nz     15;
 
 // free surface refinement region. (fs_z1) bottom and (fs_z2) top.
 fs_z1   1.65;
@@ -31,29 +36,29 @@ TSR               4.0;  // tip speed ratio
 current     (0.81 0 0); // current velocity (x,y,z)
 elementProfiles         // element profile polar files
 (
-    NACA_63418_Re0_15e6
-    NACA_63418_Re0_15e6
-    NACA_63418_Re0_15e6
-    NACA_63418_Re0_15e6
-    NACA_63418_Re0_15e6
-    NACA_63418_Re0_15e6
-    NACA_63418_Re0_15e6
-    NACA_63418_Re0_15e6
-    NACA_63418_Re0_15e6
-    NACA_63418_Re0_15e6
-    NACA_63418_Re0_15e6
-    NACA_63418_Re0_15e6
-    NACA_63418_Re0_15e6
-    NACA_63418_Re0_15e6
-    NACA_63418_Re0_15e6
-    NACA_63418_Re0_15e6
-    NACA_63418_Re0_15e6
-    NACA_63418_Re0_15e6
-    NACA_63418_Re0_15e6
-    NACA_63418_Re0_15e6
-    NACA_63418_Re0_15e6
-    NACA_63418_Re0_15e6
-    NACA_63418_Re0_15e6
+    cylinder
+    cylinder
+    NACA_638XX_Re0_12e6
+    NACA_638XX_Re0_12e6
+    NACA_638XX_Re0_12e6
+    NACA_638XX_Re0_12e6
+    NACA_638XX_Re0_12e6
+    NACA_638XX_Re0_12e6
+    NACA_638XX_Re0_12e6
+    NACA_638XX_Re0_12e6
+    NACA_638XX_Re0_12e6
+    NACA_638XX_Re0_12e6
+    NACA_638XX_Re0_12e6
+    NACA_638XX_Re0_12e6
+    NACA_638XX_Re0_12e6
+    NACA_638XX_Re0_12e6
+    NACA_638XX_Re0_12e6
+    NACA_638XX_Re0_12e6
+    NACA_638XX_Re0_12e6
+    NACA_638XX_Re0_12e6
+    NACA_638XX_Re0_12e6
+    NACA_638XX_Re0_12e6
+    NACA_638XX_Re0_12e6
 );
 
 

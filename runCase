@@ -10,6 +10,7 @@
 
 # choose 1, 2, 3 or 4 for different simulation types
 reply="$(grep "choice" setup | sed 's/;//' | tr -s " " | cut -d" " -f2)"
+turbine="$(grep "turbine" setup | sed 's/;//' | tr -s " " | cut -d" " -f2)"
 endTime=$(foamDictionary -value -entry endTime system/controlDict)
 directory="./processor0/"
 
@@ -50,6 +51,19 @@ else
       cp system/setFieldsDict_back system/setFieldsDict
       cp constant/waveDict_curr_back constant/waveDict
   fi
+
+  # Make turbine changes
+  echo setting up turbine...
+  if [ $turbine == "1" ];
+  then
+      cp system/elementData.IFREMER_gen2 system/elementData
+      cp system/fvOptions.IFREMER_gen2 system/fvOptions
+  elif [ $turbine == "2" ];
+  then
+      cp system/elementData.SuperGen_Xmed system/elementData
+      cp system/fvOptions.SuperGen_Xmed system/fvOptions
+  fi
+
 
   # Meshing
   runApplication blockMesh
