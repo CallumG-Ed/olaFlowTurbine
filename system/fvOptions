@@ -111,37 +111,585 @@ turbine
 
         profileData
         {
-            NACA_638XX_Re0_05e6
+            NACA_634XX_stat3_Re0_05e6
             {
-                data (#include "../resources/foilData/2D/NACA_638XX_Re0_05e6");
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat3_Re0_05e6");
             }
-            NACA_638XX_Re0_06e6
+            NACA_634XX_stat3_Re0_06e6
             {
-                data (#include "../resources/foilData/2D/NACA_638XX_Re0_06e6");
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat3_Re0_06e6");
             }
-            NACA_638XX_Re0_07e6
+            NACA_634XX_stat3_Re0_07e6
             {
-                data (#include "../resources/foilData/2D/NACA_638XX_Re0_07e6");
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat3_Re0_07e6");
             }
-            NACA_638XX_Re0_10e6
+            NACA_634XX_stat3_Re0_08e6
             {
-                data (#include "../resources/foilData/2D/NACA_638XX_Re0_10e6");
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat3_Re0_08e6");
             }
-            NACA_638XX_Re0_12e6
+            NACA_634XX_stat4_Re0_05e6
             {
-                data (#include "../resources/foilData/2D/NACA_638XX_Re0_12e6");
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat4_Re0_05e6");
             }
-            NACA_638XX_Re0_15e6
+            NACA_634XX_stat4_Re0_06e6
             {
-                data (#include "../resources/foilData/2D/NACA_638XX_Re0_15e6");
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat4_Re0_06e6");
             }
-            NACA_638XX_Re0_18e6
+            NACA_634XX_stat4_Re0_07e6
             {
-                data (#include "../resources/foilData/2D/NACA_638XX_Re0_18e6");
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat4_Re0_07e6");
             }
-            NACA_638XX_Re0_21e6
+            NACA_634XX_stat4_Re0_08e6
             {
-                data (#include "../resources/foilData/2D/NACA_638XX_Re0_21e6");
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat4_Re0_08e6");
+            }
+            NACA_634XX_stat4_Re0_09e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat4_Re0_09e6");
+            }
+            NACA_634XX_stat4_Re0_10e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat4_Re0_10e6");
+            }
+            NACA_634XX_stat5_Re0_05e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat5_Re0_05e6");
+            }
+            NACA_634XX_stat5_Re0_06e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat5_Re0_06e6");
+            }
+            NACA_634XX_stat5_Re0_07e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat5_Re0_07e6");
+            }
+            NACA_634XX_stat5_Re0_08e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat5_Re0_08e6");
+            }
+            NACA_634XX_stat5_Re0_09e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat5_Re0_09e6");
+            }
+            NACA_634XX_stat5_Re0_10e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat5_Re0_10e6");
+            }
+            NACA_634XX_stat5_Re0_11e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat5_Re0_11e6");
+            }
+            NACA_634XX_stat6_Re0_05e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat6_Re0_05e6");
+            }
+            NACA_634XX_stat6_Re0_06e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat6_Re0_06e6");
+            }
+            NACA_634XX_stat6_Re0_07e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat6_Re0_07e6");
+            }
+            NACA_634XX_stat6_Re0_08e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat6_Re0_08e6");
+            }
+            NACA_634XX_stat6_Re0_09e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat6_Re0_09e6");
+            }
+            NACA_634XX_stat6_Re0_10e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat6_Re0_10e6");
+            }
+            NACA_634XX_stat6_Re0_11e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat6_Re0_11e6");
+            }
+            NACA_634XX_stat6_Re0_12e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat6_Re0_12e6");
+            }
+            NACA_634XX_stat7_Re0_05e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat7_Re0_05e6");
+            }
+            NACA_634XX_stat7_Re0_06e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat7_Re0_06e6");
+            }
+            NACA_634XX_stat7_Re0_07e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat7_Re0_07e6");
+            }
+            NACA_634XX_stat7_Re0_09e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat7_Re0_09e6");
+            }
+            NACA_634XX_stat7_Re0_10e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat7_Re0_10e6");
+            }
+            NACA_634XX_stat7_Re0_12e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat7_Re0_12e6");
+            }
+            NACA_634XX_stat7_Re0_13e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat7_Re0_13e6");
+            }
+            NACA_634XX_stat8_Re0_05e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat8_Re0_05e6");
+            }
+            NACA_634XX_stat8_Re0_06e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat8_Re0_06e6");
+            }
+            NACA_634XX_stat8_Re0_08e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat8_Re0_08e6");
+            }
+            NACA_634XX_stat8_Re0_09e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat8_Re0_09e6");
+            }
+            NACA_634XX_stat8_Re0_11e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat8_Re0_11e6");
+            }
+            NACA_634XX_stat8_Re0_12e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat8_Re0_12e6");
+            }
+            NACA_634XX_stat8_Re0_14e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat8_Re0_14e6");
+            }
+            NACA_634XX_stat9_Re0_05e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat9_Re0_05e6");
+            }
+            NACA_634XX_stat9_Re0_06e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat9_Re0_06e6");
+            }
+            NACA_634XX_stat9_Re0_08e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat9_Re0_08e6");
+            }
+            NACA_634XX_stat9_Re0_10e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat9_Re0_10e6");
+            }
+            NACA_634XX_stat9_Re0_11e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat9_Re0_11e6");
+            }
+            NACA_634XX_stat9_Re0_13e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat9_Re0_13e6");
+            }
+            NACA_634XX_stat9_Re0_15e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat9_Re0_15e6");
+            }
+            NACA_634XX_stat10_Re0_05e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat10_Re0_05e6");
+            }
+            NACA_634XX_stat10_Re0_06e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat10_Re0_06e6");
+            }
+            NACA_634XX_stat10_Re0_08e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat10_Re0_08e6");
+            }
+            NACA_634XX_stat10_Re0_10e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat10_Re0_10e6");
+            }
+            NACA_634XX_stat10_Re0_12e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat10_Re0_12e6");
+            }
+            NACA_634XX_stat10_Re0_14e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat10_Re0_14e6");
+            }
+            NACA_634XX_stat10_Re0_16e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat10_Re0_16e6");
+            }
+            NACA_634XX_stat11_Re0_05e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat11_Re0_05e6");
+            }
+            NACA_634XX_stat11_Re0_07e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat11_Re0_07e6");
+            }
+            NACA_634XX_stat11_Re0_08e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat11_Re0_08e6");
+            }
+            NACA_634XX_stat11_Re0_10e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat11_Re0_10e6");
+            }
+            NACA_634XX_stat11_Re0_13e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat11_Re0_13e6");
+            }
+            NACA_634XX_stat11_Re0_15e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat11_Re0_15e6");
+            }
+            NACA_634XX_stat11_Re0_17e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat11_Re0_17e6");
+            }
+            NACA_634XX_stat12_Re0_05e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat12_Re0_05e6");
+            }
+            NACA_634XX_stat12_Re0_07e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat12_Re0_07e6");
+            }
+            NACA_634XX_stat12_Re0_09e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat12_Re0_09e6");
+            }
+            NACA_634XX_stat12_Re0_11e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat12_Re0_11e6");
+            }
+            NACA_634XX_stat12_Re0_13e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat12_Re0_13e6");
+            }
+            NACA_634XX_stat12_Re0_16e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat12_Re0_16e6");
+            }
+            NACA_634XX_stat12_Re0_18e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat12_Re0_18e6");
+            }
+            NACA_634XX_stat13_Re0_05e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat13_Re0_05e6");
+            }
+            NACA_634XX_stat13_Re0_07e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat13_Re0_07e6");
+            }
+            NACA_634XX_stat13_Re0_09e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat13_Re0_09e6");
+            }
+            NACA_634XX_stat13_Re0_11e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat13_Re0_11e6");
+            }
+            NACA_634XX_stat13_Re0_14e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat13_Re0_14e6");
+            }
+            NACA_634XX_stat13_Re0_16e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat13_Re0_16e6");
+            }
+            NACA_634XX_stat13_Re0_19e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat13_Re0_19e6");
+            }
+            NACA_634XX_stat14_Re0_05e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat14_Re0_05e6");
+            }
+            NACA_634XX_stat14_Re0_07e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat14_Re0_07e6");
+            }
+            NACA_634XX_stat14_Re0_09e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat14_Re0_09e6");
+            }
+            NACA_634XX_stat14_Re0_12e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat14_Re0_12e6");
+            }
+            NACA_634XX_stat14_Re0_14e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat14_Re0_14e6");
+            }
+            NACA_634XX_stat14_Re0_17e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat14_Re0_17e6");
+            }
+            NACA_634XX_stat14_Re0_19e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat14_Re0_19e6");
+            }
+            NACA_634XX_stat15_Re0_05e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat15_Re0_05e6");
+            }
+            NACA_634XX_stat15_Re0_07e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat15_Re0_07e6");
+            }
+            NACA_634XX_stat15_Re0_09e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat15_Re0_09e6");
+            }
+            NACA_634XX_stat15_Re0_12e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat15_Re0_12e6");
+            }
+            NACA_634XX_stat15_Re0_15e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat15_Re0_15e6");
+            }
+            NACA_634XX_stat15_Re0_17e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat15_Re0_17e6");
+            }
+            NACA_634XX_stat15_Re0_20e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat15_Re0_20e6");
+            }
+            NACA_634XX_stat16_Re0_05e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat16_Re0_05e6");
+            }
+            NACA_634XX_stat16_Re0_06e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat16_Re0_06e6");
+            }
+            NACA_634XX_stat16_Re0_07e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat16_Re0_07e6");
+            }
+            NACA_634XX_stat16_Re0_10e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat16_Re0_10e6");
+            }
+            NACA_634XX_stat16_Re0_12e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat16_Re0_12e6");
+            }
+            NACA_634XX_stat16_Re0_15e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat16_Re0_15e6");
+            }
+            NACA_634XX_stat16_Re0_18e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat16_Re0_18e6");
+            }
+            NACA_634XX_stat16_Re0_21e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat16_Re0_21e6");
+            }
+            NACA_634XX_stat17_Re0_05e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat17_Re0_05e6");
+            }
+            NACA_634XX_stat17_Re0_07e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat17_Re0_07e6");
+            }
+            NACA_634XX_stat17_Re0_10e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat17_Re0_10e6");
+            }
+            NACA_634XX_stat17_Re0_13e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat17_Re0_13e6");
+            }
+            NACA_634XX_stat17_Re0_16e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat17_Re0_16e6");
+            }
+            NACA_634XX_stat17_Re0_19e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat17_Re0_19e6");
+            }
+            NACA_634XX_stat17_Re0_22e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat17_Re0_22e6");
+            }
+            NACA_634XX_stat18_Re0_05e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat18_Re0_05e6");
+            }
+            NACA_634XX_stat18_Re0_08e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat18_Re0_08e6");
+            }
+            NACA_634XX_stat18_Re0_10e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat18_Re0_10e6");
+            }
+            NACA_634XX_stat18_Re0_13e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat18_Re0_13e6");
+            }
+            NACA_634XX_stat18_Re0_17e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat18_Re0_17e6");
+            }
+            NACA_634XX_stat18_Re0_20e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat18_Re0_20e6");
+            }
+            NACA_634XX_stat18_Re0_23e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat18_Re0_23e6");
+            }
+            NACA_634XX_stat19_Re0_05e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat19_Re0_05e6");
+            }
+            NACA_634XX_stat19_Re0_08e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat19_Re0_08e6");
+            }
+            NACA_634XX_stat19_Re0_11e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat19_Re0_11e6");
+            }
+            NACA_634XX_stat19_Re0_14e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat19_Re0_14e6");
+            }
+            NACA_634XX_stat19_Re0_17e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat19_Re0_17e6");
+            }
+            NACA_634XX_stat19_Re0_20e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat19_Re0_20e6");
+            }
+            NACA_634XX_stat19_Re0_24e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat19_Re0_24e6");
+            }
+            NACA_634XX_stat20_Re0_05e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat20_Re0_05e6");
+            }
+            NACA_634XX_stat20_Re0_08e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat20_Re0_08e6");
+            }
+            NACA_634XX_stat20_Re0_11e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat20_Re0_11e6");
+            }
+            NACA_634XX_stat20_Re0_14e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat20_Re0_14e6");
+            }
+            NACA_634XX_stat20_Re0_18e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat20_Re0_18e6");
+            }
+            NACA_634XX_stat20_Re0_21e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat20_Re0_21e6");
+            }
+            NACA_634XX_stat20_Re0_25e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat20_Re0_25e6");
+            }
+            NACA_634XX_stat21_Re0_05e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat21_Re0_05e6");
+            }
+            NACA_634XX_stat21_Re0_08e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat21_Re0_08e6");
+            }
+            NACA_634XX_stat21_Re0_11e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat21_Re0_11e6");
+            }
+            NACA_634XX_stat21_Re0_15e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat21_Re0_15e6");
+            }
+            NACA_634XX_stat21_Re0_18e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat21_Re0_18e6");
+            }
+            NACA_634XX_stat21_Re0_21e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat21_Re0_21e6");
+            }
+            NACA_634XX_stat21_Re0_25e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat21_Re0_25e6");
+            }
+            NACA_634XX_stat22_Re0_05e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat22_Re0_05e6");
+            }
+            NACA_634XX_stat22_Re0_08e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat22_Re0_08e6");
+            }
+            NACA_634XX_stat22_Re0_11e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat22_Re0_11e6");
+            }
+            NACA_634XX_stat22_Re0_14e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat22_Re0_14e6");
+            }
+            NACA_634XX_stat22_Re0_18e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat22_Re0_18e6");
+            }
+            NACA_634XX_stat22_Re0_21e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat22_Re0_21e6");
+            }
+            NACA_634XX_stat22_Re0_25e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat22_Re0_25e6");
+            }
+            NACA_634XX_stat23_Re0_05e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat23_Re0_05e6");
+            }
+            NACA_634XX_stat23_Re0_08e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat23_Re0_08e6");
+            }
+            NACA_634XX_stat23_Re0_11e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat23_Re0_11e6");
+            }
+            NACA_634XX_stat23_Re0_14e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat23_Re0_14e6");
+            }
+            NACA_634XX_stat23_Re0_17e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat23_Re0_17e6");
+            }
+            NACA_634XX_stat23_Re0_21e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat23_Re0_21e6");
+            }
+            NACA_634XX_stat23_Re0_24e6
+            {
+            		 data (#include "../resources/foilData/2D/NACA_634XX_stat23_Re0_24e6");
             }
             cylinder
             {
