@@ -17,7 +17,7 @@ FoamFile
 
 waveType        regular;
 
-waveTheory      cnoidal;
+waveTheory      $waveTheory;
 
 genAbs          1;
 
@@ -25,14 +25,16 @@ absDir          0.0;
 
 nPaddles        1;
 
-waveHeight      0.10;
+waveHeight      $waveHeight;
 
-wavePeriod      3;
+wavePeriod      $wavePeriod;
 
 waveDir         0.0;
 
 wavePhase       1.57079633;
 
 uCurrent        (-0.8 0. 0.);
+
+tSmooth         0.25;
 
 // ************************************************************************* //

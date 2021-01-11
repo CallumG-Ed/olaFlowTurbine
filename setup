@@ -11,7 +11,7 @@
 // "(2) Waves and backward current"
 // "(3) Forward current only"
 // "(4) Backward current only"
-choice 3;
+choice 1;
 
 
 nCores 32; // Number of compute cores to solve on
@@ -22,41 +22,46 @@ nx     100;
 ny     40;
 nz     30;
 
+// Wave parameters
+waveTheory      StokesIII;
+waveHeight      0.37;
+wavePeriod      1.82;
+
 // free surface refinement region. (fs_z1) bottom and (fs_z2) top.
 fs_z1   1.65;
 fs_z2   2.05;
 
 // Turbine parameters
-TSR               1.0;  // tip speed ratio
+TSR               4.0;  // tip speed ratio
 current     (0.8 0 0);  // current velocity (x,y,z)
 elementProfiles         // element profile polar files
 (
     cylinder
     cylinder
-    NACA_634XX_stat3_Re0_05e6
-    NACA_634XX_stat4_Re0_05e6
-    NACA_634XX_stat5_Re0_05e6
-    NACA_634XX_stat6_Re0_05e6
-    NACA_634XX_stat7_Re0_05e6
-    NACA_634XX_stat8_Re0_05e6
-    NACA_634XX_stat9_Re0_05e6
-    NACA_634XX_stat10_Re0_05e6
-    NACA_634XX_stat11_Re0_05e6
-    NACA_634XX_stat12_Re0_05e6
-    NACA_634XX_stat13_Re0_05e6
-    NACA_634XX_stat14_Re0_05e6
-    NACA_634XX_stat15_Re0_05e6
-    NACA_634XX_stat16_Re0_05e6
-    NACA_634XX_stat17_Re0_05e6
-    NACA_634XX_stat18_Re0_05e6
-    NACA_634XX_stat19_Re0_05e6
-    NACA_634XX_stat20_Re0_05e6
-    NACA_634XX_stat21_Re0_05e6
-    NACA_634XX_stat22_Re0_05e6
-    NACA_634XX_stat23_Re0_05e6
+    NACA_634XX_stat3_Re0_06e6
+    NACA_634XX_stat4_Re0_07e6
+    NACA_634XX_stat5_Re0_08e6
+    NACA_634XX_stat6_Re0_08e6
+    NACA_634XX_stat7_Re0_09e6
+    NACA_634XX_stat8_Re0_09e6
+    NACA_634XX_stat9_Re0_10e6
+    NACA_634XX_stat10_Re0_10e6
+    NACA_634XX_stat11_Re0_10e6
+    NACA_634XX_stat12_Re0_11e6
+    NACA_634XX_stat13_Re0_11e6
+    NACA_634XX_stat14_Re0_12e6
+    NACA_634XX_stat15_Re0_12e6
+    NACA_634XX_stat16_Re0_12e6
+    NACA_634XX_stat17_Re0_13e6
+    NACA_634XX_stat18_Re0_13e6
+    NACA_634XX_stat19_Re0_14e6
+    NACA_634XX_stat20_Re0_14e6
+    NACA_634XX_stat21_Re0_15e6
+    NACA_634XX_stat22_Re0_14e6
+    NACA_634XX_stat23_Re0_14e6
 );
 
 
 // Run parameters
 simEnd      15; // simulation end time
-dT       0.001; // time step
+dT       0.005; // time step
