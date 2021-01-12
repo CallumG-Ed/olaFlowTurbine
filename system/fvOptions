@@ -27,7 +27,7 @@ turbine
         fieldNames          (U);
         selectionMode       cellSet; // cellSet || points || cellZone
         cellSet             turbine;
-        origin              (5 -2 1);
+        origin              (5 -5.5 1);
         axis                (-1 0 0);
         verticalDirection   (0 0 1);
         freeStreamVelocity  $current;

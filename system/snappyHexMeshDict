@@ -34,30 +34,30 @@ geometry
     turbine
     {
         type searchableCylinder;
-        point1 (4.5 -2 1);
-        point2 (5.5 -2 1);
+        point1 (4.5 -5.5 1);
+        point2 (5.5 -5.5 1);
         radius 0.7;
     }
 
     tower
     {
         type searchableCylinder;
-        point1 (5.5 -2 0);
-        point2 (5.5 -2 1);
+        point1 (5.5 -5.5 0);
+        point2 (5.5 -5.5 1);
         radius 0.2;
     }
 
     turb_zone
     {
         type searchableBox;
-        min (4.0  -3.0  0.0);
-        max (7.0  -1.0  1.7);
+        min (4.0  -6.5  0.0);
+        max (7.0  -4.5  1.7);
     }
 
     free_surface
     {
         type searchableBox;
-        min (0.0  -4.0  1.65);
+        min (0.0  -11.0  1.65);
         max (10.0  0.0  2.05);
     }
 };
