@@ -18,9 +18,9 @@ nCores 8; // Number of compute cores to solve on
 
 
 // Discretisation of global domain in streamwise (x), spanwise (y), verticle (z)
-nx     20;
-ny     22;
-nz     6;
+nx     100;
+ny     110;
+nz     30;
 
 // Wave parameters
 waveTheory      StokesIII;
