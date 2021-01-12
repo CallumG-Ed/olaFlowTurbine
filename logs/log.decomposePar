@@ -1,0 +1,368 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v1906                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : v1906 OPENFOAM=1906
+Arch   : "LSB;label=64;scalar=64"
+Exec   : decomposePar
+Date   : Jan 12 2021
+Time   : 19:01:33
+Host   : callum
+PID    : 30128
+I/O    : uncollated
+Case   : /home/callum/OpenFOAM/callum-v1906/run/olaFlowTurbine_clean/olaFlowTurbine
+nProcs : 1
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Overriding DebugSwitches according to controlDict
+    axialFlowTurbineALSource 0;
+
+    actuatorLineSource 0;
+
+    actuatorLineElement 0;
+
+    LeishmanBeddoes 0;
+
+--> FOAM Warning : 
+    From function static Foam::IOstreamOption::compressionType Foam::IOstreamOption::compressionEnum(const Foam::word&)
+    in file db/IOstreams/IOstreams/IOstreamOption.C at line 88
+    Unknown compression specifier 'uncompressed', assuming no compression
+
+
+Decomposing mesh region0
+
+Create mesh
+
+Calculating distribution of cells
+Selecting decompositionMethod scotch [8]
+
+Finished decomposition in 0.11 s
+
+Calculating original mesh data
+
+Distributing cells to processors
+
+Distributing faces to processors
+
+Distributing points to processors
+
+Constructing processor meshes
+Overriding DebugSwitches according to controlDict
+    axialFlowTurbineALSource 0;
+
+    actuatorLineSource 0;
+
+    actuatorLineElement 0;
+
+    LeishmanBeddoes 0;
+
+--> FOAM Warning : 
+    From function static Foam::IOstreamOption::compressionType Foam::IOstreamOption::compressionEnum(const Foam::word&)
+    in file db/IOstreams/IOstreams/IOstreamOption.C at line 88
+    Unknown compression specifier 'uncompressed', assuming no compression
+
+Processor 0
+    Number of cells = 3597
+    Number of faces shared with processor 1 = 499
+    Number of faces shared with processor 2 = 252
+    Number of faces shared with processor 5 = 103
+    Number of faces shared with processor 6 = 56
+    Number of processor patches = 4
+    Number of processor faces = 910
+    Number of boundary faces = 5
+Overriding DebugSwitches according to controlDict
+    axialFlowTurbineALSource 0;
+
+    actuatorLineSource 0;
+
+    actuatorLineElement 0;
+
+    LeishmanBeddoes 0;
+
+--> FOAM Warning : 
+    From function static Foam::IOstreamOption::compressionType Foam::IOstreamOption::compressionEnum(const Foam::word&)
+    in file db/IOstreams/IOstreams/IOstreamOption.C at line 88
+    Unknown compression specifier 'uncompressed', assuming no compression
+
+Processor 1
+    Number of cells = 3607
+    Number of faces shared with processor 0 = 499
+    Number of faces shared with processor 2 = 169
+    Number of faces shared with processor 3 = 8
+    Number of faces shared with processor 5 = 29
+    Number of faces shared with processor 6 = 15
+    Number of faces shared with processor 7 = 8
+    Number of processor patches = 6
+    Number of processor faces = 728
+    Number of boundary faces = 108
+Overriding DebugSwitches according to controlDict
+    axialFlowTurbineALSource 0;
+
+    actuatorLineSource 0;
+
+    actuatorLineElement 0;
+
+    LeishmanBeddoes 0;
+
+--> FOAM Warning : 
+    From function static Foam::IOstreamOption::compressionType Foam::IOstreamOption::compressionEnum(const Foam::word&)
+    in file db/IOstreams/IOstreams/IOstreamOption.C at line 88
+    Unknown compression specifier 'uncompressed', assuming no compression
+
+Processor 2
+    Number of cells = 3567
+    Number of faces shared with processor 0 = 252
+    Number of faces shared with processor 1 = 169
+    Number of faces shared with processor 3 = 271
+    Number of faces shared with processor 5 = 215
+    Number of faces shared with processor 6 = 16
+    Number of faces shared with processor 7 = 38
+    Number of processor patches = 6
+    Number of processor faces = 961
+    Number of boundary faces = 257
+Overriding DebugSwitches according to controlDict
+    axialFlowTurbineALSource 0;
+
+    actuatorLineSource 0;
+
+    actuatorLineElement 0;
+
+    LeishmanBeddoes 0;
+
+--> FOAM Warning : 
+    From function static Foam::IOstreamOption::compressionType Foam::IOstreamOption::compressionEnum(const Foam::word&)
+    in file db/IOstreams/IOstreams/IOstreamOption.C at line 88
+    Unknown compression specifier 'uncompressed', assuming no compression
+
+Processor 3
+    Number of cells = 3537
+    Number of faces shared with processor 1 = 8
+    Number of faces shared with processor 2 = 271
+    Number of faces shared with processor 7 = 173
+    Number of processor patches = 3
+    Number of processor faces = 452
+    Number of boundary faces = 462
+Overriding DebugSwitches according to controlDict
+    axialFlowTurbineALSource 0;
+
+    actuatorLineSource 0;
+
+    actuatorLineElement 0;
+
+    LeishmanBeddoes 0;
+
+--> FOAM Warning : 
+    From function static Foam::IOstreamOption::compressionType Foam::IOstreamOption::compressionEnum(const Foam::word&)
+    in file db/IOstreams/IOstreams/IOstreamOption.C at line 88
+    Unknown compression specifier 'uncompressed', assuming no compression
+
+Processor 4
+    Number of cells = 3605
+    Number of faces shared with processor 5 = 294
+    Number of faces shared with processor 6 = 164
+    Number of processor patches = 2
+    Number of processor faces = 458
+    Number of boundary faces = 650
+Overriding DebugSwitches according to controlDict
+    axialFlowTurbineALSource 0;
+
+    actuatorLineSource 0;
+
+    actuatorLineElement 0;
+
+    LeishmanBeddoes 0;
+
+--> FOAM Warning : 
+    From function static Foam::IOstreamOption::compressionType Foam::IOstreamOption::compressionEnum(const Foam::word&)
+    in file db/IOstreams/IOstreams/IOstreamOption.C at line 88
+    Unknown compression specifier 'uncompressed', assuming no compression
+
+Processor 5
+    Number of cells = 3557
+    Number of faces shared with processor 0 = 103
+    Number of faces shared with processor 1 = 29
+    Number of faces shared with processor 2 = 215
+    Number of faces shared with processor 4 = 294
+    Number of faces shared with processor 6 = 117
+    Number of processor patches = 5
+    Number of processor faces = 758
+    Number of boundary faces = 242
+Overriding DebugSwitches according to controlDict
+    axialFlowTurbineALSource 0;
+
+    actuatorLineSource 0;
+
+    actuatorLineElement 0;
+
+    LeishmanBeddoes 0;
+
+--> FOAM Warning : 
+    From function static Foam::IOstreamOption::compressionType Foam::IOstreamOption::compressionEnum(const Foam::word&)
+    in file db/IOstreams/IOstreams/IOstreamOption.C at line 88
+    Unknown compression specifier 'uncompressed', assuming no compression
+
+Processor 6
+    Number of cells = 3575
+    Number of faces shared with processor 0 = 56
+    Number of faces shared with processor 1 = 15
+    Number of faces shared with processor 2 = 16
+    Number of faces shared with processor 4 = 164
+    Number of faces shared with processor 5 = 117
+    Number of faces shared with processor 7 = 187
+    Number of processor patches = 6
+    Number of processor faces = 555
+    Number of boundary faces = 317
+Overriding DebugSwitches according to controlDict
+    axialFlowTurbineALSource 0;
+
+    actuatorLineSource 0;
+
+    actuatorLineElement 0;
+
+    LeishmanBeddoes 0;
+
+--> FOAM Warning : 
+    From function static Foam::IOstreamOption::compressionType Foam::IOstreamOption::compressionEnum(const Foam::word&)
+    in file db/IOstreams/IOstreams/IOstreamOption.C at line 88
+    Unknown compression specifier 'uncompressed', assuming no compression
+
+Processor 7
+    Number of cells = 3537
+    Number of faces shared with processor 1 = 8
+    Number of faces shared with processor 2 = 38
+    Number of faces shared with processor 3 = 173
+    Number of faces shared with processor 6 = 187
+    Number of processor patches = 4
+    Number of processor faces = 406
+    Number of boundary faces = 453
+
+Number of processor faces = 2614
+Max number of cells = 3607 (0.958645301239% above average 3572.75)
+Max number of processor patches = 6 (33.3333333333% above average 4.5)
+Max number of faces between processors = 961 (47.0543228768% above average 653.5)
+
+Time = 0
+
+Processor 0: field transfer
+Overriding DebugSwitches according to controlDict
+    axialFlowTurbineALSource 0;
+
+    actuatorLineSource 0;
+
+    actuatorLineElement 0;
+
+    LeishmanBeddoes 0;
+
+--> FOAM Warning : 
+    From function static Foam::IOstreamOption::compressionType Foam::IOstreamOption::compressionEnum(const Foam::word&)
+    in file db/IOstreams/IOstreams/IOstreamOption.C at line 88
+    Unknown compression specifier 'uncompressed', assuming no compression
+Processor 1: field transfer
+Overriding DebugSwitches according to controlDict
+    axialFlowTurbineALSource 0;
+
+    actuatorLineSource 0;
+
+    actuatorLineElement 0;
+
+    LeishmanBeddoes 0;
+
+--> FOAM Warning : 
+    From function static Foam::IOstreamOption::compressionType Foam::IOstreamOption::compressionEnum(const Foam::word&)
+    in file db/IOstreams/IOstreams/IOstreamOption.C at line 88
+    Unknown compression specifier 'uncompressed', assuming no compression
+Processor 2: field transfer
+Overriding DebugSwitches according to controlDict
+    axialFlowTurbineALSource 0;
+
+    actuatorLineSource 0;
+
+    actuatorLineElement 0;
+
+    LeishmanBeddoes 0;
+
+--> FOAM Warning : 
+    From function static Foam::IOstreamOption::compressionType Foam::IOstreamOption::compressionEnum(const Foam::word&)
+    in file db/IOstreams/IOstreams/IOstreamOption.C at line 88
+    Unknown compression specifier 'uncompressed', assuming no compression
+Processor 3: field transfer
+Overriding DebugSwitches according to controlDict
+    axialFlowTurbineALSource 0;
+
+    actuatorLineSource 0;
+
+    actuatorLineElement 0;
+
+    LeishmanBeddoes 0;
+
+--> FOAM Warning : 
+    From function static Foam::IOstreamOption::compressionType Foam::IOstreamOption::compressionEnum(const Foam::word&)
+    in file db/IOstreams/IOstreams/IOstreamOption.C at line 88
+    Unknown compression specifier 'uncompressed', assuming no compression
+Processor 4: field transfer
+Overriding DebugSwitches according to controlDict
+    axialFlowTurbineALSource 0;
+
+    actuatorLineSource 0;
+
+    actuatorLineElement 0;
+
+    LeishmanBeddoes 0;
+
+--> FOAM Warning : 
+    From function static Foam::IOstreamOption::compressionType Foam::IOstreamOption::compressionEnum(const Foam::word&)
+    in file db/IOstreams/IOstreams/IOstreamOption.C at line 88
+    Unknown compression specifier 'uncompressed', assuming no compression
+Processor 5: field transfer
+Overriding DebugSwitches according to controlDict
+    axialFlowTurbineALSource 0;
+
+    actuatorLineSource 0;
+
+    actuatorLineElement 0;
+
+    LeishmanBeddoes 0;
+
+--> FOAM Warning : 
+    From function static Foam::IOstreamOption::compressionType Foam::IOstreamOption::compressionEnum(const Foam::word&)
+    in file db/IOstreams/IOstreams/IOstreamOption.C at line 88
+    Unknown compression specifier 'uncompressed', assuming no compression
+Processor 6: field transfer
+Overriding DebugSwitches according to controlDict
+    axialFlowTurbineALSource 0;
+
+    actuatorLineSource 0;
+
+    actuatorLineElement 0;
+
+    LeishmanBeddoes 0;
+
+--> FOAM Warning : 
+    From function static Foam::IOstreamOption::compressionType Foam::IOstreamOption::compressionEnum(const Foam::word&)
+    in file db/IOstreams/IOstreams/IOstreamOption.C at line 88
+    Unknown compression specifier 'uncompressed', assuming no compression
+Processor 7: field transfer
+Overriding DebugSwitches according to controlDict
+    axialFlowTurbineALSource 0;
+
+    actuatorLineSource 0;
+
+    actuatorLineElement 0;
+
+    LeishmanBeddoes 0;
+
+--> FOAM Warning : 
+    From function static Foam::IOstreamOption::compressionType Foam::IOstreamOption::compressionEnum(const Foam::word&)
+    in file db/IOstreams/IOstreams/IOstreamOption.C at line 88
+    Unknown compression specifier 'uncompressed', assuming no compression
+
+End
+

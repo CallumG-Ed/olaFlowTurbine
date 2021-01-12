@@ -15,6 +15,8 @@ FoamFile
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
+#include "../setup"
+
 actions
 (
     {
@@ -25,8 +27,8 @@ actions
         sourceInfo
         {
             type cylinder;
-            p1 (4.75 -2 1);
-            p2 (5.25 -2 1);
+            p1 (4.75 -5.5 $Hub_h);
+            p2 (5.25 -5.5 $Hub_h);
             radius 0.6;
         }
     }
@@ -39,8 +41,8 @@ actions
         sourceInfo
         {
             type cylinder;
-            p1 (5.5 -2 3);
-            p2 (5.5 -2 1);
+            p1 (5.5 -5.5 0);
+            p2 (5.5 -5.5 $Hub_h);
             radius 0.1;
         }
     }
