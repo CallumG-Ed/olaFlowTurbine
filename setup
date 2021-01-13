@@ -25,17 +25,17 @@ dT       0.005; // time step
 // Domain prameters - streamwise (x), spanwise (y), verticle (z)
 /*---------------------------------------------------------------------------*/
 // dimensions
-x     10.0;
-y    -11.0;
-z      3.0;
+x     120.0;
+y    -100.0;
+z      60.0;
 
 // discretisation
-nx     20;
-ny     22;
-nz     6;
+nx     36;
+ny     30;
+nz     18;
 
 // bounding box for the water proportion of the domain for setFieldsDict
-waterBox (-1 -12 -1) (11 1 2);
+waterBox (-1 -101 -1) (121 1 50);
 // ([x0-1] [y0-1] [z0-1]) ([x+1] [y+1] [free surface z])
 /*---------------------------------------------------------------------------*/
 
@@ -53,17 +53,17 @@ wavePeriod      3.0;
 // Mesh Refinement
 /*---------------------------------------------------------------------------*/
 // free surface refinement region. (fs_z1) bottom and (fs_z2) top.
-fs_z1   1.65;
-fs_z2   2.05;
+fs_z1   45;
+fs_z2   55;
 /*---------------------------------------------------------------------------*/
 
 
 /*---------------------------------------------------------------------------*/
 // Turbine parameters
 /*---------------------------------------------------------------------------*/
-Hub_x             5.0;
-Hub_y            -5.5;
-Hub_z             1.0;  // hub height
+Hub_x             50.0;
+Hub_y            -50.0;
+Hub_z             15.0;  // hub height
 
 TSR               4.0;  // tip speed ratio
 U_mean            0.8;  // mean current streamwise (x)
