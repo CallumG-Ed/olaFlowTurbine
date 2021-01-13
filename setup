@@ -7,11 +7,10 @@
 \*---------------------------------------------------------------------------*/
 
 // Choice
-// "(1) Waves and forward current"
-// "(2) Waves and backward current"
-// "(3) Forward current only"
-// "(4) Backward current only"
-choice 3;
+// "(1) Waves and current"
+// "(2) Current only"
+
+choice 1;
 
 
 nCores 8; // Number of compute cores to solve on
@@ -23,9 +22,9 @@ ny     22;
 nz     6;
 
 // Wave parameters
-waveTheory      StokesIII;
-waveHeight      0.37;
-wavePeriod      1.82;
+waveTheory      cnoidal;
+waveHeight      0.1;
+wavePeriod      3.0;
 
 // free surface refinement region. (fs_z1) bottom and (fs_z2) top.
 fs_z1   1.65;

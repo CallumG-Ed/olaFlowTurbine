@@ -15,7 +15,11 @@ FoamFile
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-waveType        current;
+#include "../setup"
+
+waveType        regular;
+
+waveTheory      $waveTheory;
 
 genAbs          1;
 
@@ -23,6 +27,16 @@ absDir          0.0;
 
 nPaddles        1;
 
-uCurrent        (0.8 0. 0.);
+waveHeight      $waveHeight;
+
+wavePeriod      $wavePeriod;
+
+waveDir         0.0;
+
+wavePhase       1.57079633;
+
+uCurrent        ($U_mean 0. 0.);
+
+tSmooth         0.25;
 
 // ************************************************************************* //
