@@ -1,37 +1,70 @@
 /*---------------------------------------------------------------------------*\
 | =========                 |                                                 |
 | \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
-|  \\    /   O peration     | Version:  1906                                   |
+|  \\    /   O peration     | Version:  1906                                  |
 |   \\  /    A nd           | Web:      http://www.openfoam.com               |
 |    \\/     M anipulation  |                                                 |
 \*---------------------------------------------------------------------------*/
 
+
+/*---------------------------------------------------------------------------*/
+// General run paramenters
+/*---------------------------------------------------------------------------*/
 // Choice
 // "(1) Waves and current"
 // "(2) Current only"
 
-choice 1;
+choice       1;
+nCores       8; // Number of compute cores to solve on
+simEnd      15; // simulation end time
+dT       0.005; // time step
+/*---------------------------------------------------------------------------*/
 
 
-nCores 8; // Number of compute cores to solve on
+/*---------------------------------------------------------------------------*/
+// Domain prameters - streamwise (x), spanwise (y), verticle (z)
+/*---------------------------------------------------------------------------*/
+// dimensions
+x     10.0;
+y    -11.0;
+z      3.0;
 
-
-// Discretisation of global domain in streamwise (x), spanwise (y), verticle (z)
+// discretisation
 nx     20;
 ny     22;
 nz     6;
 
-// Wave parameters
+// bounding box for the water proportion of the domain for setFieldsDict
+waterBox (-1 -12 -1) (11 1 2);
+// ([x0-1] [y0-1] [z0-1]) ([x+1] [y+1] [free surface z])
+/*---------------------------------------------------------------------------*/
+
+
+/*---------------------------------------------------------------------------*/
+// Wave parameters (if waves included in simulaton)
+/*---------------------------------------------------------------------------*/
 waveTheory      cnoidal;
 waveHeight      0.1;
 wavePeriod      3.0;
+/*---------------------------------------------------------------------------*/
 
+
+/*---------------------------------------------------------------------------*/
+// Mesh Refinement
+/*---------------------------------------------------------------------------*/
 // free surface refinement region. (fs_z1) bottom and (fs_z2) top.
 fs_z1   1.65;
 fs_z2   2.05;
+/*---------------------------------------------------------------------------*/
 
+
+/*---------------------------------------------------------------------------*/
 // Turbine parameters
-Hub_h             1.0;  // hub height
+/*---------------------------------------------------------------------------*/
+Hub_x             5.0;
+Hub_y            -5.5;
+Hub_z             1.0;  // hub height
+
 TSR               4.0;  // tip speed ratio
 U_mean            0.8;  // mean current streamwise (x)
 elementProfiles         // element profile polar files
@@ -60,8 +93,4 @@ elementProfiles         // element profile polar files
     NACA_634XX_stat22_Re0_14e6
     NACA_634XX_stat23_Re0_14e6
 );
-
-
-// Run parameters
-simEnd      15; // simulation end time
-dT       0.005; // time step
+/*---------------------------------------------------------------------------*/

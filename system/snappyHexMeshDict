@@ -34,8 +34,8 @@ geometry
     turbine
     {
         type searchableCylinder;
-        point1 (4.5 -5.5 $Hub_h);
-        point2 (5.5 -5.5 $Hub_h);
+        point1 (4.5 -5.5 $Hub_z);
+        point2 (5.5 -5.5 $Hub_z);
         radius 0.7;
     }
 
@@ -43,7 +43,7 @@ geometry
     {
         type searchableCylinder;
         point1 (5.5 -5.5 0);
-        point2 (5.5 -5.5 $Hub_h);
+        point2 (5.5 -5.5 $Hub_z);
         radius 0.2;
     }
 
@@ -57,8 +57,8 @@ geometry
     free_surface
     {
         type searchableBox;
-        min (0.0  -11.0  $fs_z1);
-        max (10.0  0.0   $fs_z2);
+        min (0.0  $y   $fs_z1);
+        max ($x   0.0  $fs_z2);
     }
 };
 
