@@ -14,13 +14,13 @@
 choice 3;
 
 
-nCores 32; // Number of compute cores to solve on
+nCores 8; // Number of compute cores to solve on
 
 
 // Discretisation of global domain in streamwise (x), spanwise (y), verticle (z)
-nx     100;
-ny     110;
-nz     30;
+nx     20;
+ny     22;
+nz     6;
 
 // Wave parameters
 waveTheory      StokesIII;
@@ -32,9 +32,9 @@ fs_z1   1.65;
 fs_z2   2.05;
 
 // Turbine parameters
-Hub_h             1.0;
+Hub_h             1.0;  // hub height
 TSR               4.0;  // tip speed ratio
-current     (0.8 0 0);  // current velocity (x,y,z)
+U_mean            0.8;  // mean current streamwise (x)
 elementProfiles         // element profile polar files
 (
     cylinder
