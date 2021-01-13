@@ -3,14 +3,12 @@
 . $WM_PROJECT_DIR/bin/tools/RunFunctions
 
 # Choice
-# "(1) Waves and forward current"
-# "(2) Waves and backward current"
-# "(3) Forward current only"
-# "(4) Backward current only"
+# "(1) Waves and current"
+# "(2) Current only"
+
 
 # choose 1, 2, 3 or 4 for different simulation types
 reply="$(grep "choice" setup | sed 's/;//' | tr -s " " | cut -d" " -f2)"
-turbine="$(grep "turbine" setup | sed 's/;//' | tr -s " " | cut -d" " -f2)"
 endTime=$(foamDictionary -value -entry endTime system/controlDict)
 directory="./processor0/"
 
@@ -32,36 +30,12 @@ else
   echo Making case adjustments...
   if [ $reply == "1" ];
   then
-      cp 0/U_forw 0/U
-      cp system/setFieldsDict_forw system/setFieldsDict
-      cp constant/waveDict_wave_forw constant/waveDict
+      cp constant/waveDict_wave constant/waveDict
+
   elif [ $reply == "2" ];
   then
-      cp 0/U_back 0/U
-      cp system/setFieldsDict_back system/setFieldsDict
-      cp constant/waveDict_wave_back constant/waveDict
-  elif [ $reply == "3" ];
-  then
-      cp 0/U_forw 0/U
-      cp system/setFieldsDict_forw system/setFieldsDict
-      cp constant/waveDict_curr_forw constant/waveDict
-  elif [ $reply == "4" ];
-  then
-      cp 0/U_back 0/U
-      cp system/setFieldsDict_back system/setFieldsDict
-      cp constant/waveDict_curr_back constant/waveDict
-  fi
+      cp constant/waveDict_curr constant/waveDict
 
-  # Make turbine changes
-  echo setting up turbine...
-  if [ $turbine == "1" ];
-  then
-      cp system/elementData.IFREMER_gen2 system/elementData
-      cp system/fvOptions.IFREMER_gen2 system/fvOptions
-  elif [ $turbine == "2" ];
-  then
-      cp system/elementData.SuperGen_Xmed system/elementData
-      cp system/fvOptions.SuperGen_Xmed system/fvOptions
   fi
 
 

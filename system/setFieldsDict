@@ -10,29 +10,29 @@ FoamFile
     version     2.0;
     format      ascii;
     class       dictionary;
-    location    "constant";
-    object      waveDict;
+    location    "system";
+    object      setFieldsDict;
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-waveType        regular;
+#include "../setup"
 
-waveTheory      cnoidal;
+defaultFieldValues
+(
+    volScalarFieldValue alpha.water 0
+    volVectorFieldValue U           (0. 0. 0.)
+);
 
-genAbs          1;
+regions
+(
+    boxToCell
+    {
+        box $waterBox;
 
-absDir          0.0;
-
-nPaddles        1;
-
-waveHeight      0.10;
-
-wavePeriod      3;
-
-waveDir         0.0;
-
-wavePhase       1.57079633;
-
-uCurrent        (-0.8 0. 0.);
-
-// ************************************************************************* //
+        fieldValues
+        (
+            volScalarFieldValue alpha.water 1
+            volVectorFieldValue U           ($U_mean 0. 0.)
+        );
+    }
+);
