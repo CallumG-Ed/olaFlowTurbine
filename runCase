@@ -31,22 +31,22 @@ else
   echo Making case adjustments...
   if [ $reply == "1" ];
   then
-      cp 0/U_forw 0/U
+      #cp 0/U_forw 0/U
       #cp system/setFieldsDict_forw system/setFieldsDict
       cp constant/waveDict_wave_forw constant/waveDict
   elif [ $reply == "2" ];
   then
-      cp 0/U_back 0/U
+      #cp 0/U_back 0/U
       #cp system/setFieldsDict_back system/setFieldsDict
       cp constant/waveDict_wave_back constant/waveDict
   elif [ $reply == "3" ];
   then
-      cp 0/U_forw 0/U
+      #cp 0/U_forw 0/U
       #cp system/setFieldsDict_forw system/setFieldsDict
       cp constant/waveDict_curr_forw constant/waveDict
   elif [ $reply == "4" ];
   then
-      cp 0/U_back 0/U
+      #cp 0/U_back 0/U
       #cp system/setFieldsDict_back system/setFieldsDict
       cp constant/waveDict_curr_back constant/waveDict
   fi
