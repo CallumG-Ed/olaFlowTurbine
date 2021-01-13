@@ -27,8 +27,8 @@ actions
         sourceInfo
         {
             type cylinder;
-            p1 (4.75 -5.5 $Hub_z);
-            p2 (5.25 -5.5 $Hub_z);
+            p1 (4.75 -2 $Hub_z);
+            p2 (5.25 -2 $Hub_z);
             radius 0.6;
         }
     }
@@ -41,8 +41,8 @@ actions
         sourceInfo
         {
             type cylinder;
-            p1 (5.5 -5.5 0);
-            p2 (5.5 -5.5 $Hub_z);
+            p1 (5.5 -2 0);
+            p2 (5.5 -2 $Hub_z);
             radius 0.1;
         }
     }
