@@ -14,8 +14,8 @@
 // "(1) Waves and current"
 // "(2) Current only"
 
-choice       1;
-nCores       8; // Number of compute cores to solve on
+choice       2;
+nCores      32; // Number of compute cores to solve on
 simEnd      15; // simulation end time
 dT       0.005; // time step
 /*---------------------------------------------------------------------------*/
@@ -30,9 +30,9 @@ y    -11.0;
 z      3.0;
 
 // discretisation
-nx     20;
-ny     22;
-nz     6;
+nx     100;
+ny     110;
+nz     30;
 
 // bounding box for the water proportion of the domain for setFieldsDict
 waterBox (-1 -12 -1) (11 1 2);
@@ -71,26 +71,26 @@ elementProfiles         // element profile polar files
 (
     cylinder
     cylinder
-    NACA_634XX_stat3_Re0_06e6
-    NACA_634XX_stat4_Re0_07e6
-    NACA_634XX_stat5_Re0_08e6
-    NACA_634XX_stat6_Re0_08e6
-    NACA_634XX_stat7_Re0_09e6
-    NACA_634XX_stat8_Re0_09e6
-    NACA_634XX_stat9_Re0_10e6
-    NACA_634XX_stat10_Re0_10e6
-    NACA_634XX_stat11_Re0_10e6
-    NACA_634XX_stat12_Re0_11e6
-    NACA_634XX_stat13_Re0_11e6
-    NACA_634XX_stat14_Re0_12e6
-    NACA_634XX_stat15_Re0_12e6
     NACA_634XX_stat16_Re0_12e6
-    NACA_634XX_stat17_Re0_13e6
-    NACA_634XX_stat18_Re0_13e6
-    NACA_634XX_stat19_Re0_14e6
-    NACA_634XX_stat20_Re0_14e6
-    NACA_634XX_stat21_Re0_15e6
-    NACA_634XX_stat22_Re0_14e6
-    NACA_634XX_stat23_Re0_14e6
+    NACA_634XX_stat16_Re0_12e6
+    NACA_634XX_stat16_Re0_12e6
+    NACA_634XX_stat16_Re0_12e6
+    NACA_634XX_stat16_Re0_12e6
+    NACA_634XX_stat16_Re0_12e6
+    NACA_634XX_stat16_Re0_12e6
+    NACA_634XX_stat16_Re0_12e6
+    NACA_634XX_stat16_Re0_12e6
+    NACA_634XX_stat16_Re0_12e6
+    NACA_634XX_stat16_Re0_12e6
+    NACA_634XX_stat16_Re0_12e6
+    NACA_634XX_stat16_Re0_12e6
+    NACA_634XX_stat16_Re0_12e6
+    NACA_634XX_stat16_Re0_12e6
+    NACA_634XX_stat16_Re0_12e6
+    NACA_634XX_stat16_Re0_12e6
+    NACA_634XX_stat16_Re0_12e6
+    NACA_634XX_stat16_Re0_12e6
+    NACA_634XX_stat16_Re0_12e6
+    NACA_634XX_stat16_Re0_12e6
 );
 /*---------------------------------------------------------------------------*/
