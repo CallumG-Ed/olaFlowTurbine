@@ -15,8 +15,8 @@
 // "(2) Current only"
 
 choice       1;
-nCores      32; // Number of compute cores to solve on
-simEnd      15; // simulation end time
+nCores      8; // Number of compute cores to solve on
+simEnd      4; // simulation end time
 dT       0.005; // time step
 /*---------------------------------------------------------------------------*/
 
@@ -30,9 +30,9 @@ y    -100.0;
 z      60.0;
 
 // discretisation
-nx     120;
-ny     100;
-nz     60;
+nx     24;
+ny     20;
+nz     12;
 
 // bounding box for the water proportion of the domain for setFieldsDict
 waterBox (-1 -101 -1) (121 1 50);
