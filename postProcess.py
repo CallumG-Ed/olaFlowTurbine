@@ -86,7 +86,7 @@ def transform(angle, F_g):
     return x, y, z
 
 
-def sumResults(t,Az,files):
+def sumResults(t,Az,num_blades,files):
     
     t = np.array(t)
     Az = np.array(Az)
@@ -125,9 +125,15 @@ def sumResults(t,Az,files):
             results[:,7] = results[:,7] + (table.fx*table.y) - (table.fy*table.x)
           
         elif blade == 2:
-            # Move centre from hub centre to blade root
-            table.z = table.z - (hub_rad*np.cos((Az+120)*math.pi/180))
-            table.y = table.y + (hub_rad*np.sin((Az+120)*math.pi/180))
+            
+            if num_blades == 3:
+                # Move centre from hub centre to blade root
+                table.z = table.z - (hub_rad*np.cos((Az+120)*math.pi/180))
+                table.y = table.y + (hub_rad*np.sin((Az+120)*math.pi/180))
+            elif num_blades == 2:
+                # Move centre from hub centre to blade root
+                table.z = table.z - (hub_rad*np.cos((Az+180)*math.pi/180))
+                table.y = table.y + (hub_rad*np.sin((Az+180)*math.pi/180))
             
             #Forces
             results[:,8] = results[:,8] + table.fx
@@ -188,7 +194,10 @@ def transformToBlade(results):
             if blade == 1:
                 angle = results.at[j, 'azimuth']
             elif blade == 2:
-                angle = results.at[j, 'azimuth'] + 120
+                if num_blades == 3:
+                    angle = results.at[j, 'azimuth'] + 120
+                elif num_blades == 2:
+                    angle = results.at[j, 'azimuth'] + 180               
             elif blade == 3:
                 angle = results.at[j, 'azimuth'] + 240
             
@@ -232,7 +241,7 @@ start = NearestVal(t, settle[0][0])[1]
 end = NearestVal(t, settle[1][0])[1]
 
 files, num_blades = getElementFiles()
-results = sumResults(t,Az,files)
+results = sumResults(t,Az,num_blades,files)
 results = transformToBlade(results)
 results = results[start:end]
 writeOutputFile(results)
