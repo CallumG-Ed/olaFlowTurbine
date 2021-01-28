@@ -9,6 +9,8 @@ def NearestVal(array, value):
     array = np.asarray(array)
     idx   = (np.abs(array - value)).argmin()
     return array[idx], idx
+
+
 def getTurbineVars():
     
     t  = []
@@ -46,6 +48,8 @@ def getTurbineVars():
         
             
     return t, Az, Cp, blade_l, hub_x, hub_y, hub_z, hub_rad
+
+
 def getElementFiles():
         
     files = os.listdir('postProcessing/actuatorLineElements/0/')
@@ -55,6 +59,8 @@ def getElementFiles():
     else:
         blades = 2
     return files, blades
+
+
 def transform(angle, F_g):
     
     '''
@@ -78,7 +84,9 @@ def transform(angle, F_g):
 
     
     return x, y, z
-def sumResults(t,Az,files):
+
+
+def sumResults(t,Az,num_blades,files):
     
     t = np.array(t)
     Az = np.array(Az)
@@ -101,12 +109,12 @@ def sumResults(t,Az,files):
         table.x = table.x - hub_x
         table.y = table.y - hub_y
         table.z = table.y - hub_z
-        
-        # Move centre from hub centre to blade root
-        table.z = table.z - (hub_rad*np.cos(Az*math.pi/180))
-        table.y = table.y + (hub_rad*np.sin(Az*math.pi/180))
-        
+               
         if blade == 1:
+            # Move centre from hub centre to blade root
+            table.z = table.z - (hub_rad*np.cos(Az*math.pi/180))
+            table.y = table.y + (hub_rad*np.sin(Az*math.pi/180))
+            
             #Forces
             results[:,2] = results[:,2] + table.fx
             results[:,3] = results[:,3] + table.fy
@@ -117,6 +125,16 @@ def sumResults(t,Az,files):
             results[:,7] = results[:,7] + (table.fx*table.y) - (table.fy*table.x)
           
         elif blade == 2:
+            
+            if num_blades == 3:
+                # Move centre from hub centre to blade root
+                table.z = table.z - (hub_rad*np.cos((Az+120)*math.pi/180))
+                table.y = table.y + (hub_rad*np.sin((Az+120)*math.pi/180))
+            elif num_blades == 2:
+                # Move centre from hub centre to blade root
+                table.z = table.z - (hub_rad*np.cos((Az+180)*math.pi/180))
+                table.y = table.y + (hub_rad*np.sin((Az+180)*math.pi/180))
+            
             #Forces
             results[:,8] = results[:,8] + table.fx
             results[:,9] = results[:,9] + table.fy
@@ -127,6 +145,10 @@ def sumResults(t,Az,files):
             results[:,13] = results[:,13] + (table.fx*table.y) - (table.fy*table.x)
             
         elif blade == 3:
+            # Move centre from hub centre to blade root
+            table.z = table.z - (hub_rad*np.cos((Az+240)*math.pi/180))
+            table.y = table.y + (hub_rad*np.sin((Az+240)*math.pi/180))
+            
             #Forces
             results[:,14] = results[:,14] + table.fx
             results[:,15] = results[:,15] + table.fy
@@ -137,6 +159,8 @@ def sumResults(t,Az,files):
             results[:,19] = results[:,19] + (table.fx*table.y) - (table.fy*table.x)
     
     return results
+
+
 def transformToBlade(results):
 
     cols = ['time', 'azimuth']
@@ -170,7 +194,10 @@ def transformToBlade(results):
             if blade == 1:
                 angle = results.at[j, 'azimuth']
             elif blade == 2:
-                angle = results.at[j, 'azimuth'] + 120
+                if num_blades == 3:
+                    angle = results.at[j, 'azimuth'] + 120
+                elif num_blades == 2:
+                    angle = results.at[j, 'azimuth'] + 180               
             elif blade == 3:
                 angle = results.at[j, 'azimuth'] + 240
             
@@ -186,6 +213,8 @@ def transformToBlade(results):
             results.at[ j, ('Mz'+str(blade)) ] = transform(angle, m_g)[2]
             
     return results
+
+
 def writeOutputFile(results):
     with open('Results.csv', 'w') as f:
         for col in results.columns:
@@ -201,6 +230,7 @@ def writeOutputFile(results):
             f.write('\n')
     return
 
+
 t, Az, Cp, blade_l, hub_x, hub_y, hub_z, hub_rad = getTurbineVars()
 
 plt.figure()
@@ -211,7 +241,7 @@ start = NearestVal(t, settle[0][0])[1]
 end = NearestVal(t, settle[1][0])[1]
 
 files, num_blades = getElementFiles()
-results = sumResults(t,Az,files)
+results = sumResults(t,Az,num_blades,files)
 results = transformToBlade(results)
 results = results[start:end]
 writeOutputFile(results)
