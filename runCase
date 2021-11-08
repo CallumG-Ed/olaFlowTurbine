@@ -12,6 +12,8 @@ reply="$(grep "choice" setup | sed 's/;//' | tr -s " " | cut -d" " -f2)"
 endTime=$(foamDictionary -value -entry endTime system/controlDict)
 directory="./processor0/"
 
+turbine="$(grep "TurName" setup | sed 's/;//' | tr -s " " | cut -d" " -f2)"
+
 if [ -d "$directory" ]; then
 
   # Running
@@ -35,9 +37,21 @@ else
   elif [ $reply == "2" ];
   then
       cp constant/waveDict_curr constant/waveDict
-
   fi
 
+  if [ $turbine == "SuperGen_Xmed" ]
+  then
+    cp system/elementData_SuperGen_Xmed system/elemantData
+  elif [ $turbine == "IFREMER_gen2" ]
+  then
+    cp system/elementData_IFREMER_gen2 system/elemantData
+  elif [ $turbine == "FullScale_Xmed" ]
+  then
+    cp system/elementData_FullScale_Xmed system/elemantData
+  else
+    echo Did not recognise turbine name cancelling operation...
+    exit
+  fi
 
   # Meshing
   runApplication blockMesh

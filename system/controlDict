@@ -46,9 +46,9 @@ timeFormat      general;
 
 timePrecision   6;
 
-runTimeModifiable yes;
+runTimeModifiable no;
 
-adjustTimeStep  yes;
+adjustTimeStep  no;
 
 maxCo           0.5;
 maxAlphaCo	    0.5;
@@ -73,7 +73,6 @@ functions
     Gauge1
     {
         type sets;
-        functionObjectLibs (“libsampling.so”);
         writeControl timeStep;
         outputInterval 1;
         interpolationScheme cellPoint;
@@ -96,7 +95,6 @@ functions
     Gauge2
     {
         type sets;
-        functionObjectLibs (“libsampling.so”);
         writeControl timeStep;
         outputInterval 1;
         interpolationScheme cellPoint;
@@ -119,7 +117,6 @@ functions
     Gauge3
     {
         type sets;
-        functionObjectLibs (“libsampling.so”);
         writeControl timeStep;
         outputInterval 1;
         interpolationScheme cellPoint;
@@ -142,7 +139,6 @@ functions
     Gauge4
     {
         type sets;
-        functionObjectLibs (“libsampling.so”);
         writeControl timeStep;
         outputInterval 1;
         interpolationScheme cellPoint;
@@ -165,7 +161,6 @@ functions
     Gauge5
     {
         type sets;
-        functionObjectLibs (“libsampling.so”);
         writeControl timeStep;
         outputInterval 1;
         interpolationScheme cellPoint;
@@ -188,7 +183,6 @@ functions
     Gauge6
     {
         type sets;
-        functionObjectLibs (“libsampling.so”);
         writeControl timeStep;
         outputInterval 1;
         interpolationScheme cellPoint;
@@ -211,7 +205,6 @@ functions
     Gauge7
     {
         type sets;
-        functionObjectLibs (“libsampling.so”);
         writeControl timeStep;
         outputInterval 1;
         interpolationScheme cellPoint;
