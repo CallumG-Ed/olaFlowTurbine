@@ -7,7 +7,7 @@
 # "(2) Current only"
 
 
-# choose 1, 2, 3 or 4 for different simulation types
+# choose 1 or 2 for different simulation types
 reply="$(grep "choice" setup | sed 's/;//' | tr -s " " | cut -d" " -f2)"
 endTime=$(foamDictionary -value -entry endTime system/controlDict)
 directory="./processor0/"
@@ -51,21 +51,22 @@ else
   #Running
   runApplication topoSet
   runApplication setFields
+  runApplication setExprFields
   runApplication decomposePar
-  runParallel olaDyMFlow
+  runParallel olaFlow_current
 
 fi
 
 if [ -d "$directory$endTime" ]; then
 
   # reconstructing
-  runApplication reconstructPar
+  # runApplication reconstructPar
 
   # Cleaning directory
   touch olaFlowTurbine.foam
   mkdir logs
   mv log.* logs
-  rm -fr pro*
+  #rm -fr pro*
 
   echo Simulation complete.
 

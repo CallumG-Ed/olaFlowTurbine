@@ -31,12 +31,12 @@ waveHeight      $waveHeight;
 
 wavePeriod      $wavePeriod;
 
-waveDir         0.0;
+waveDir         $waveDir;
 
-wavePhase       1.57079633;
+wavePhase       $wavePhase;
 
 uCurrent        ($U_mean 0. 0.);
 
-tSmooth         0.25;
+//tSmooth         0.25;
 
 // ************************************************************************* //
