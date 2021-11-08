@@ -115,91 +115,91 @@ turbine
             // 2D
             NACA_63418_Re0_01e6
             {
-                data (#include "../resources/foilData/2D/NACA_63418_Re0_01e6");
+                data (#include "../resources/IFREMER_gen2/foilData/2D/NACA_63418_Re0_01e6");
             }
             NACA_63418_Re0_02e6
             {
-                data (#include "../resources/foilData/2D/NACA_63418_Re0_02e6");
+                data (#include "../resources/IFREMER_gen2/foilData/2D/NACA_63418_Re0_02e6");
             }
             NACA_63418_Re0_03e6
             {
-                data (#include "../resources/foilData/2D/NACA_63418_Re0_03e6");
+                data (#include "../resources/IFREMER_gen2/foilData/2D/NACA_63418_Re0_03e6");
             }
             NACA_63418_Re0_04e6
             {
-                data (#include "../resources/foilData/2D/NACA_63418_Re0_04e6");
+                data (#include "../resources/IFREMER_gen2/foilData/2D/NACA_63418_Re0_04e6");
             }
             NACA_63418_Re0_05e6
             {
-                data (#include "../resources/foilData/2D/NACA_63418_Re0_05e6");
+                data (#include "../resources/IFREMER_gen2/foilData/2D/NACA_63418_Re0_05e6");
             }
             NACA_63418_Re0_06e6
             {
-                data (#include "../resources/foilData/2D/NACA_63418_Re0_06e6");
+                data (#include "../resources/IFREMER_gen2/foilData/2D/NACA_63418_Re0_06e6");
             }
             NACA_63418_Re0_07e6
             {
-                data (#include "../resources/foilData/2D/NACA_63418_Re0_07e6");
+                data (#include "../resources/IFREMER_gen2/foilData/2D/NACA_63418_Re0_07e6");
             }
             NACA_63418_Re0_08e6
             {
-                data (#include "../resources/foilData/2D/NACA_63418_Re0_08e6");
+                data (#include "../resources/IFREMER_gen2/foilData/2D/NACA_63418_Re0_08e6");
             }
             NACA_63418_Re0_09e6
             {
-                data (#include "../resources/foilData/2D/NACA_63418_Re0_09e6");
+                data (#include "../resources/IFREMER_gen2/foilData/2D/NACA_63418_Re0_09e6");
             }
             NACA_63418_Re0_10e6
             {
-                data (#include "../resources/foilData/2D/NACA_63418_Re0_10e6");
+                data (#include "../resources/IFREMER_gen2/foilData/2D/NACA_63418_Re0_10e6");
             }
             NACA_63418_Re0_11e6
             {
-                data (#include "../resources/foilData/2D/NACA_63418_Re0_11e6");
+                data (#include "../resources/IFREMER_gen2/foilData/2D/NACA_63418_Re0_11e6");
             }
             NACA_63418_Re0_12e6
             {
-                data (#include "../resources/foilData/2D/NACA_63418_Re0_12e6");
+                data (#include "../resources/IFREMER_gen2/foilData/2D/NACA_63418_Re0_12e6");
             }
             NACA_63418_Re0_13e6
             {
-                data (#include "../resources/foilData/2D/NACA_63418_Re0_13e6");
+                data (#include "../resources/IFREMER_gen2/foilData/2D/NACA_63418_Re0_13e6");
             }
             NACA_63418_Re0_14e6
             {
-                data (#include "../resources/foilData/2D/NACA_63418_Re0_14e6");
+                data (#include "../resources/IFREMER_gen2/foilData/2D/NACA_63418_Re0_14e6");
             }
             NACA_63418_Re0_15e6
             {
-                data (#include "../resources/foilData/2D/NACA_63418_Re0_15e6");
+                data (#include "../resources/IFREMER_gen2/foilData/2D/NACA_63418_Re0_15e6");
             }
             NACA_63418_Re0_16e6
             {
-                data (#include "../resources/foilData/2D/NACA_63418_Re0_16e6");
+                data (#include "../resources/IFREMER_gen2/foilData/2D/NACA_63418_Re0_16e6");
             }
             NACA_63418_Re0_17e6
             {
-                data (#include "../resources/foilData/2D/NACA_63418_Re0_17e6");
+                data (#include "../resources/IFREMER_gen2/foilData/2D/NACA_63418_Re0_17e6");
             }
             NACA_63418_Re0_18e6
             {
-                data (#include "../resources/foilData/2D/NACA_63418_Re0_18e6");
+                data (#include "../resources/IFREMER_gen2/foilData/2D/NACA_63418_Re0_18e6");
             }
             NACA_63418_Re0_19e6
             {
-                data (#include "../resources/foilData/2D/NACA_63418_Re0_19e6");
+                data (#include "../resources/IFREMER_gen2/foilData/2D/NACA_63418_Re0_19e6");
             }
             NACA_63418_Re0_20e6
             {
-                data (#include "../resources/foilData/2D/NACA_63418_Re0_20e6");
+                data (#include "../resources/IFREMER_gen2/foilData/2D/NACA_63418_Re0_20e6");
             }
             NACA_63418_Re0_21e6
             {
-                data (#include "../resources/foilData/2D/NACA_63418_Re0_21e6");
+                data (#include "../resources/IFREMER_gen2/foilData/2D/NACA_63418_Re0_21e6");
             }
             NACA_63418_Re0_22e6
             {
-                data (#include "../resources/foilData/2D/NACA_63418_Re0_22e6");
+                data (#include "../resources/IFREMER_gen2/foilData/2D/NACA_63418_Re0_22e6");
             }
             cylinder
             {
