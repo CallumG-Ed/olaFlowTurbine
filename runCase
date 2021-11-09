@@ -2,26 +2,20 @@
 
 . $WM_PROJECT_DIR/bin/tools/RunFunctions
 
-# Choice
-# "(1) Waves and current"
-# "(2) Current only"
-
-
-# choose 1 or 2 for different simulation types
+# Simulation type with (1) or without (2) waves
 reply="$(grep "choice" setup | sed 's/;//' | tr -s " " | cut -d" " -f2)"
 endTime=$(foamDictionary -value -entry endTime system/controlDict)
 directory="./processor0/"
 
+# Turbine simulating (IFREMER_gen2, SuperGen_Xmed, FullScale_Xmed)
 turbine="$(grep "TurName" setup | sed 's/;//' | tr -s " " | cut -d" " -f2)"
 
+# Check to see if any solvinf already done
 if [ -d "$directory" ]; then
-
-  # Running
   latestTime=$(foamListTimes -latestTime -processor)
   echo "Attempting to restart solver from time $latestTime ..."
-  mv log.olaDyMFlow log.olaDyMFlow$latestTime
-  runParallel olaDyMFlow
-
+  mv log.olaFlow_current log.olaFlow_current_old_$latestTime
+  runParallel olaFlow_current
 else
 
   # Set initial conditions
@@ -33,7 +27,6 @@ else
   if [ $reply == "1" ];
   then
       cp constant/waveDict_wave constant/waveDict
-
   elif [ $reply == "2" ];
   then
       cp constant/waveDict_curr constant/waveDict
@@ -41,13 +34,13 @@ else
 
   if [ $turbine == "SuperGen_Xmed" ]
   then
-    cp system/elementData_SuperGen_Xmed system/elemantData
+    cp system/elementData_SuperGen_Xmed system/elementData
   elif [ $turbine == "IFREMER_gen2" ]
   then
-    cp system/elementData_IFREMER_gen2 system/elemantData
+    cp system/elementData_IFREMER_gen2 system/elementData
   elif [ $turbine == "FullScale_Xmed" ]
   then
-    cp system/elementData_FullScale_Xmed system/elemantData
+    cp system/elementData_FullScale_Xmed system/elementData
   else
     echo Did not recognise turbine name cancelling operation...
     exit
@@ -68,20 +61,12 @@ else
   runApplication setExprFields
   runApplication decomposePar
   runParallel olaFlow_current
-
 fi
 
+# Check if simulation finished and clear up directory
 if [ -d "$directory$endTime" ]; then
-
-  # reconstructing
-  # runApplication reconstructPar
-
-  # Cleaning directory
   touch olaFlowTurbine.foam
   mkdir logs
   mv log.* logs
-  #rm -fr pro*
-
   echo Simulation complete.
-
 fi

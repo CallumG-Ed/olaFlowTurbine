@@ -17,7 +17,7 @@ FoamFile
 
 #include "../setup"
 
-waveType        regular;
+waveType        $waveType;
 
 waveTheory      $waveTheory;
 

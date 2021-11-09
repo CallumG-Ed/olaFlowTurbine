@@ -5,14 +5,20 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 def NearestVal(array, value):
-
     array = np.asarray(array)
     idx   = (np.abs(array - value)).argmin()
     return array[idx], idx
 
+def getVars():
 
-def getTurbineVars():
-
+    '''
+    function looks inside the turbine file for time [s], Azimuth [deg] and Cp
+    vectors first. Next it looks in the elementData file to calculate the blade
+    length. It then looks in the setup file to get the coordinates of the hub 
+    centre in the global coordinate system (for translating later). And finally 
+    it gets the rotor radius from fvOptions.
+    '''
+    
     t  = []
     Az = []
     Cp = []
@@ -40,17 +46,28 @@ def getTurbineVars():
             hub_y = float(line.split()[1][:-1])
          if 'Hub_z' in line:
             hub_z = float(line.split()[1][:-1])
+         if 'rotor_R' in line:
+            Rotor_rad = float(line.split()[1][:-1])
+            hub_rad = Rotor_rad - blade_l
+         if 'freeSurface' in line:
+            waterZ = float(line.split()[1][:-1])
 
-    with open('system/fvOptions', 'r') as f:
-        for line in f:
-            if 'rotorRadius' in line:
-                hub_rad = float(line.split()[1][:-1])
+    # with open('system/fvOptions', 'r') as f:
+    #     for line in f:
+    #         if 'rotor_R' in line:
+    #             Rotor_rad = float(line.split()[1][:-1])
+    #             hub_rad = Rotor_rad - blade_l
 
 
-    return t, Az, Cp, blade_l, hub_x, hub_y, hub_z, hub_rad
-
+    return t, Az, Cp, blade_l, hub_x, hub_y, hub_z, hub_rad, waterZ
 
 def getElementFiles():
+    
+    '''
+    This function checks for number of blades by parsing the 
+    actuatorLineElements directory. Each actuator line file is stamped with a 
+    blade number (i.e. blade1, blade2, blade3 etc)
+    '''
 
     files = os.listdir('postProcessing/actuatorLineElements/0/')
 
@@ -60,20 +77,17 @@ def getElementFiles():
         blades = 2
     return files, blades
 
-
 def transform(angle, F_g):
 
     '''
     F_b = A * F_g
 
-    where F_b is the transformed force vector vector, F_g the global force vector
-    and A_1 and A_2 transformation matrices.
-
+    where F_b (force at blade root) is the transformed force vector, F_g the 
+    global force vector and A is the transformation matrix.
 
     A_2 = [ 1       0               0       ] <-- this transforms from global
           | 0   cos(Azimuth)   sin(Azimuth) |     to local blade
           [ 0  -sin(Azimuth)   cos(Azimuth) ]
-
     '''
 
     angle = angle * math.pi/180
@@ -81,12 +95,18 @@ def transform(angle, F_g):
     x = F_g[0]
     y = F_g[1]*math.cos(angle) + F_g[2]*math.sin(angle)
     z = F_g[2]*math.cos(angle) - F_g[1]*math.sin(angle)
-
-
+    
     return x, y, z
 
-
-def sumResults(t,Az,num_blades,files):
+def sumTurbineResults(t, Az, num_blades, files, hub_rad, hub_x, hub_y, hub_z):
+    
+    '''
+    This function simply goes into each element file of each blade and sums 
+    them together. For example all elements in blade1 are added together to give
+    a sum of forces along the blade. To sum the moments the global coordinate 
+    system from turbinesFoam is first moved onto centre hub and then for each 
+    blade moved to the blade root.
+    '''
 
     t = np.array(t)
     Az = np.array(Az)
@@ -101,17 +121,14 @@ def sumResults(t,Az,num_blades,files):
         blade = int(file.split('.')[1].replace('blade',''))
         table = pd.read_csv('postProcessing/actuatorLineElements/0/'+file)
 
-        #Not sure I need these
-        #root_dist = table.root_dist[0]
-        #R = root_dist * blade_l
-
         # Centre coord system at centre hub
         table.x = table.x - hub_x
         table.y = table.y - hub_y
         table.z = table.y - hub_z
 
         if blade == 1:
-            # Move centre from hub centre to blade root
+            # Move centre from hub to blade root. This is so moments can be 
+            # calculated at the blade root.
             table.z = table.z - (hub_rad*np.cos(Az*math.pi/180))
             table.y = table.y + (hub_rad*np.sin(Az*math.pi/180))
 
@@ -160,8 +177,15 @@ def sumResults(t,Az,num_blades,files):
 
     return results
 
-
-def transformToBlade(results):
+def transformToBlade(results, num_blades):
+    
+    '''
+    Transforms the forces and moments calculated at the blade root in the 
+    global reference frame into the blade local reference frame. Function also 
+    outputs everything into a dataframe for writing later. Lower case 
+    formatted variables (i.e. fx fy, fz, mz, ...) are global parameters upper 
+    caes (i.e. Fx Fy, Fz, Mz, ...) are blade reference frame parameters.
+    '''
 
     cols = ['time', 'azimuth']
     for i in range(num_blades):
@@ -175,7 +199,7 @@ def transformToBlade(results):
     results = pd.DataFrame(results)
     results.columns = cols
 
-    # add x', y', z' , fx', fy', fz' to table
+    # add blade transformed quantities to table
     zero = np.zeros((len(results),1))
     for i in range(num_blades):
         results['Fx'+str(i+1)] = zero
@@ -184,7 +208,6 @@ def transformToBlade(results):
         results['Mx'+str(i+1)] = zero
         results['My'+str(i+1)] = zero
         results['Mz'+str(i+1)] = zero
-
 
     for i in range(num_blades):
         for j in range(len(results)):
@@ -201,8 +224,8 @@ def transformToBlade(results):
             elif blade == 3:
                 angle = results.at[j, 'azimuth'] + 240
 
-            f_g = [ results.at[j, ('fx'+str(blade))],results.at[j, ('fy'+str(blade))],results.at[j, ('fz'+str(blade))] ]
-            m_g = [ results.at[j, ('mx'+str(blade))],results.at[j, ('my'+str(blade))],results.at[j, ('mz'+str(blade))] ]
+            f_g = [ results.at[j, ('fx'+str(blade))], results.at[j, ('fy'+str(blade))], results.at[j, ('fz'+str(blade))] ]
+            m_g = [ results.at[j, ('mx'+str(blade))], results.at[j, ('my'+str(blade))], results.at[j, ('mz'+str(blade))] ]
 
             results.at[ j, ('Fx'+str(blade)) ] = transform(angle, f_g)[0]
             results.at[ j, ('Fy'+str(blade)) ] = transform(angle, f_g)[1]
@@ -214,8 +237,50 @@ def transformToBlade(results):
 
     return results
 
+def getGaugeDate(waterZ):    
+    files = list(filter(lambda a: 'Gauge' in a, os.listdir("postProcessing/")))
+    files.sort()
+    
+    T  = []
+    FS = []
+    
+    for file in files:     
+        time_steps = os.listdir("postProcessing/"+file+"/")
+        time_steps.sort()
+        for time_step in time_steps:
+            t = float(time_step)
+            l = []
+            a = []
+            with open("postProcessing/"+file+"/"+time_step+"/data_alpha.water.xy") as f:
+                for line in f:
+                    l.append(float(line.split()[0]))
+                    a.append(float(line.split()[1]))
+            data = np.array([l,a]).transpose()
+            data = data[data[:,1]>0.5]
+            fs   = data[-1,0] - waterZ
+            T.append(t)
+            FS.append(fs)
+    
+    steps = int(len(T)/len(files))
+    alpha_water = np.zeros((steps,len(files)+1))
+    alpha_water[:,0] = T[0:steps]
+    for i in range(len(files)):
+        alpha_water[:,i+1] = FS[i*steps:i*steps+steps]
+    results = pd.DataFrame(alpha_water[:,1:])    
+    results.columns = files 
+    
+    return results
+
+def joinResults(results1, results2):  
+    results = results1.join(results2)   
+    return results
 
 def writeOutputFile(results):
+    
+    '''
+    Simply writes results dataframe to csv file
+    '''
+    
     with open('Results.csv', 'w') as f:
         for col in results.columns:
             f.write(col+',')
@@ -230,18 +295,32 @@ def writeOutputFile(results):
             f.write('\n')
     return
 
+def main():
+        
+    t, Az, Cp, blade_l, hub_x, hub_y, hub_z, hub_rad, waterZ = getVars()
+    
+    plt.figure()
+    plt.plot(t, Cp)
+    settle = plt.ginput(2)
+    plt.close()
+    start = NearestVal(t, settle[0][0])[1]
+    end = NearestVal(t, settle[1][0])[1]
+    
+    files, num_blades = getElementFiles()
+    turbine_results = sumTurbineResults(t, Az,num_blades, files, hub_rad, hub_x, hub_y, hub_z)
+    turbine_results = transformToBlade(turbine_results, num_blades)
+    turbine_results = turbine_results[start:end]
+    guage_results = getGaugeDate(waterZ)
+    results = joinResults(turbine_results, guage_results)
+    writeOutputFile(results)
+    
+    return
 
-t, Az, Cp, blade_l, hub_x, hub_y, hub_z, hub_rad = getTurbineVars()
+if __name__ == "__main__":
+    main()
+                
 
-plt.figure()
-plt.plot(t, Cp)
-settle = plt.ginput(2)
-plt.close()
-start = NearestVal(t, settle[0][0])[1]
-end = NearestVal(t, settle[1][0])[1]
-
-files, num_blades = getElementFiles()
-results = sumResults(t,Az,num_blades,files)
-results = transformToBlade(results)
-results = results[start:end]
-writeOutputFile(results)
+            
+        
+    
+        
