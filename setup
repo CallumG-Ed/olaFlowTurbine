@@ -75,7 +75,7 @@ TSR               4.0;  // tip speed ratio
 U_mean            0.8;  // mean current streamwise (x)
 rotor_R         0.594;  // rotor radius
 rho            998.57;  // water density
-nStats             23;  // number of blade stations
+nStats             22;  // number of blade stations
 elementProfiles         // element profile polar files
 (
     cylinder
