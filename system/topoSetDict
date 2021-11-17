@@ -27,9 +27,13 @@ actions
         sourceInfo
         {
             type cylinder;
-            p1 (4.75 -2 $Hub_z);
-            p2 (5.25 -2 $Hub_z);
-            radius 0.6;
+            p1 (#calc "$Hub_x-(0.4*$rotor_R)" $Hub_y $Hub_z);
+            p2 (#calc "$Hub_x+(0.4*$rotor_R)" $Hub_y $Hub_z);
+            radius #calc "1.05*$rotor_R";
+
+            // p1 (4.5 -5.5 1.0);
+            // p2 (5.5 -5.5 1.0);
+            // radius 0.6;
         }
     }
 
@@ -41,9 +45,13 @@ actions
         sourceInfo
         {
             type cylinder;
-            p1 (5.5 -2 0);
-            p2 (5.5 -2 $Hub_z);
-            radius 0.1;
+            p1 (#calc "$Hub_x-($offset)" $Hub_y 0);
+            p2 (#calc "$Hub_x-($offset)" $Hub_y $Hub_z);
+            radius #calc "2*$towDiam";
+
+            // p1 (5.5 -5.5 0.0);
+            // p2 (5.5 -5.5 1.0);
+            // radius 0.1;
         }
     }
 
