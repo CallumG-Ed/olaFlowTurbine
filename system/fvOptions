@@ -105,8 +105,8 @@ turbine
             //Info << "\n\n\n\n\n\nHub Radius: " << ${hubRadius} << "\n\n\n";
             elementData
             ( // axial distance, height, diameter
-                (0   $hubRpos  $hubRpos)
-                (0  $hubRneg  $hubRpos)
+                (0   $rotor_R  $rotor_R)
+                (0  #calc "-1*$rotor_R"  $rotor_R)
             );
         }
 

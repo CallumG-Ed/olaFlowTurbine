@@ -30,9 +30,9 @@ y    -11.0;
 z      3.0;
 
 // discretisation
-nx     10;
-ny     11;
-nz      3;
+nx     30;
+ny     33;
+nz      9;
 
 // Z position of free surface and bounding box for the water proportion of the
 // domain for setFieldsDict
@@ -55,15 +55,6 @@ waveDir         0.0;
 
 
 /*---------------------------------------------------------------------------*/
-// Mesh Refinement
-/*---------------------------------------------------------------------------*/
-// free surface refinement region. (fs_z1) bottom and (fs_z2) top.
-fs_z1   1.65;
-fs_z2   2.35;
-/*---------------------------------------------------------------------------*/
-
-
-/*---------------------------------------------------------------------------*/
 // Turbine parameters
 /*---------------------------------------------------------------------------*/
 TurName SuperGen_Xmed;  // IFREMER_gen2, SuperGen_Xmed or FullScale_Xmed
@@ -71,8 +62,8 @@ Hub_x             5.0;
 Hub_y            -5.5;
 Hub_z             1.0;  // hub height
 
-TSR               4.0;  // tip speed ratio
-U_mean            0.8;  // mean current streamwise (x)
+TSR               7.0;  // tip speed ratio
+U_mean           0.81;  // mean current streamwise (x)
 rotor_R         0.594;  // rotor radius
 rho            998.57;  // water density
 nStats             22;  // number of blade stations
@@ -106,7 +97,4 @@ elementProfiles         // element profile polar files
 nTowStats           6;  // number of tower stations
 offset           -0.5;  // axial distance from rotor plane
 towDiam          0.05;  // tower diameter
-
-hubRpos       0.0594;  // hub radius - used positive and negative for above and
-hubRneg      -0.0594;  // below centre hub [have to pass neg sign with var]
 /*---------------------------------------------------------------------------*/

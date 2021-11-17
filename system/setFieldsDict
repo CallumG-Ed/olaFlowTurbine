@@ -27,7 +27,7 @@ regions
 (
     boxToCell
     {
-        box $waterBox;
+        box (-1 #calc "$y-1" -1)(#calc "$x+1" 1 $freeSurface);
 
         fieldValues
         (
