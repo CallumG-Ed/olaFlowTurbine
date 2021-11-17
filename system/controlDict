@@ -84,9 +84,9 @@ functions
             {
                 type uniform;
                 axis z;
-                start (2.5 -2 0);
-                end   (2.5 -2 4);
-                nPoints 1000;
+                start (2.5 $Hub_y 0);
+                end   (2.5 $Hub_y $z);
+                nPoints #calc "$z/0.001";
             }
         );
 
@@ -106,9 +106,9 @@ functions
             {
                 type uniform;
                 axis z;
-                start (4 -2 0);
-                end   (4 -2 4);
-                nPoints 1000;
+                start (4 $Hub_y 0);
+                end   (4 $Hub_y $z);
+                nPoints "$z/0.001";
             }
         );
 
@@ -128,9 +128,9 @@ functions
             {
                 type uniform;
                 axis z;
-                start (4.5 -2 0);
-                end   (4.5 -2 4);
-                nPoints 1000;
+                start (4.5 $Hub_y 0);
+                end   (4.5 $Hub_y $z);
+                nPoints "$z/0.001";
             }
         );
 
@@ -150,9 +150,9 @@ functions
             {
                 type uniform;
                 axis z;
-                start (5 -2 0);
-                end   (5 -2 4);
-                nPoints 1000;
+                start (5 $Hub_y 0);
+                end   (5 $Hub_y $z);
+                nPoints "$z/0.001";
             }
         );
 
@@ -172,9 +172,9 @@ functions
             {
                 type uniform;
                 axis z;
-                start (5.5 -2 0);
-                end   (5.5 -2 4);
-                nPoints 1000;
+                start (5.5 $Hub_y 0);
+                end   (5.5 $Hub_y $z);
+                nPoints "$z/0.001";
             }
         );
 
@@ -194,9 +194,9 @@ functions
             {
                 type uniform;
                 axis z;
-                start (6 -2 0);
-                end   (6 -2 4);
-                nPoints 1000;
+                start (6 $Hub_y 0);
+                end   (6 $Hub_y $z);
+                nPoints "$z/0.001";
             }
         );
 
@@ -216,9 +216,9 @@ functions
             {
                 type uniform;
                 axis z;
-                start (7.5 -2 0);
-                end   (7.5 -2 4);
-                nPoints 1000;
+                start (7.5 $Hub_y 0);
+                end   (7.5 $Hub_y $z);
+                nPoints "$z/0.001";
             }
         );
 
