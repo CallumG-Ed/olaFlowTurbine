@@ -58,6 +58,7 @@ libs
 (
     "libturbinesFoam.so"
     "libOpenFOAM.so"
+    "libsampling.so"
 );
 
 DebugSwitches
@@ -108,7 +109,7 @@ functions
                 axis z;
                 start (4 $Hub_y 0);
                 end   (4 $Hub_y $z);
-                nPoints "$z/0.001";
+                nPoints #calc "$z/0.001";
             }
         );
 
@@ -130,7 +131,7 @@ functions
                 axis z;
                 start (4.5 $Hub_y 0);
                 end   (4.5 $Hub_y $z);
-                nPoints "$z/0.001";
+                nPoints #calc "$z/0.001";
             }
         );
 
@@ -152,7 +153,7 @@ functions
                 axis z;
                 start (5 $Hub_y 0);
                 end   (5 $Hub_y $z);
-                nPoints "$z/0.001";
+                nPoints #calc "$z/0.001";
             }
         );
 
@@ -174,7 +175,7 @@ functions
                 axis z;
                 start (5.5 $Hub_y 0);
                 end   (5.5 $Hub_y $z);
-                nPoints "$z/0.001";
+                nPoints #calc "$z/0.001";
             }
         );
 
@@ -196,7 +197,7 @@ functions
                 axis z;
                 start (6 $Hub_y 0);
                 end   (6 $Hub_y $z);
-                nPoints "$z/0.001";
+                nPoints #calc "$z/0.001";
             }
         );
 
@@ -218,12 +219,45 @@ functions
                 axis z;
                 start (7.5 $Hub_y 0);
                 end   (7.5 $Hub_y $z);
-                nPoints "$z/0.001";
+                nPoints #calc "$z/0.001";
             }
         );
 
     fields (alpha.water U);
     }
-
+    cuttingPlanes
+    {
+        type              surfaces;
+        outputControl     timeStep;
+        outputInterval     1;
+        surfaceFormat    vtk;
+        fields   (U alpha.water force.turbine);
+        interpolationScheme          cellPoint;
+        surfaces
+            (
+                yplane
+                {
+                type cuttingPlane;
+                planeType pointAndNormal;
+                pointAndNormalDict
+                {
+                    point (0 -5.5 0);
+                    normal (0 -1 0);
+                }
+                interpolate true;
+                }
+                xplane
+                {
+                type cuttingPlane;
+                planeType pointAndNormal;
+                pointAndNormalDict
+                {
+                    point (5 0 0);
+                    normal (1 0 0);
+                }
+                interpolate true;
+                }
+            );
+    }
 }
 // ************************************************************************* //
