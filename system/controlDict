@@ -32,7 +32,7 @@ deltaT          $dT;
 
 writeControl    adjustableRunTime;
 
-writeInterval   2;
+writeInterval   10;
 
 purgeWrite      0;
 
