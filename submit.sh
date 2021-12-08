@@ -1,6 +1,6 @@
 #!/bin/sh
 # Grid Engine
-#$ -N olaFlowTurbine_TSR4_noWaves
+#$ -N oFT_TSR4_noWaves
 #$ -cwd
 #$ -pe mpi 32 -R y
 #$ -l h_vmem=4G
@@ -16,6 +16,9 @@ echo "Running job on $NSLOTS processors..."
 # Load OpenFOAM
 module load openmpi
 . /exports/applications/apps/community/eng/OpenFOAM-1912/OpenFOAM-v1912/etc/bashrc
+
+# Load python
+module load python
 
 # Run the program
 ./runCase
