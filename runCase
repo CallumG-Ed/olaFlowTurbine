@@ -68,5 +68,7 @@ if [ -d "$directory$endTime" ]; then
   touch olaFlowTurbine.foam
   mkdir logs
   mv log.* logs
+  python makeVTPseries.py
+  python postProcess.py
   echo Simulation complete.
 fi

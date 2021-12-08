@@ -14,11 +14,11 @@ def getVars():
     '''
     function looks inside the turbine file for time [s], Azimuth [deg] and Cp
     vectors first. Next it looks in the elementData file to calculate the blade
-    length. It then looks in the setup file to get the coordinates of the hub 
-    centre in the global coordinate system (for translating later). And finally 
+    length. It then looks in the setup file to get the coordinates of the hub
+    centre in the global coordinate system (for translating later). And finally
     it gets the rotor radius from fvOptions.
     '''
-    
+
     t  = []
     Az = []
     Cp = []
@@ -62,10 +62,10 @@ def getVars():
     return t, Az, Cp, blade_l, hub_x, hub_y, hub_z, hub_rad, waterZ
 
 def getElementFiles():
-    
+
     '''
-    This function checks for number of blades by parsing the 
-    actuatorLineElements directory. Each actuator line file is stamped with a 
+    This function checks for number of blades by parsing the
+    actuatorLineElements directory. Each actuator line file is stamped with a
     blade number (i.e. blade1, blade2, blade3 etc)
     '''
 
@@ -82,7 +82,7 @@ def transform(angle, F_g):
     '''
     F_b = A * F_g
 
-    where F_b (force at blade root) is the transformed force vector, F_g the 
+    where F_b (force at blade root) is the transformed force vector, F_g the
     global force vector and A is the transformation matrix.
 
     A_2 = [ 1       0               0       ] <-- this transforms from global
@@ -95,16 +95,16 @@ def transform(angle, F_g):
     x = F_g[0]
     y = F_g[1]*math.cos(angle) + F_g[2]*math.sin(angle)
     z = F_g[2]*math.cos(angle) - F_g[1]*math.sin(angle)
-    
+
     return x, y, z
 
 def sumTurbineResults(t, Az, num_blades, files, hub_rad, hub_x, hub_y, hub_z):
-    
+
     '''
-    This function simply goes into each element file of each blade and sums 
+    This function simply goes into each element file of each blade and sums
     them together. For example all elements in blade1 are added together to give
-    a sum of forces along the blade. To sum the moments the global coordinate 
-    system from turbinesFoam is first moved onto centre hub and then for each 
+    a sum of forces along the blade. To sum the moments the global coordinate
+    system from turbinesFoam is first moved onto centre hub and then for each
     blade moved to the blade root.
     '''
 
@@ -127,7 +127,7 @@ def sumTurbineResults(t, Az, num_blades, files, hub_rad, hub_x, hub_y, hub_z):
         table.z = table.y - hub_z
 
         if blade == 1:
-            # Move centre from hub to blade root. This is so moments can be 
+            # Move centre from hub to blade root. This is so moments can be
             # calculated at the blade root.
             table.z = table.z - (hub_rad*np.cos(Az*math.pi/180))
             table.y = table.y + (hub_rad*np.sin(Az*math.pi/180))
@@ -178,12 +178,12 @@ def sumTurbineResults(t, Az, num_blades, files, hub_rad, hub_x, hub_y, hub_z):
     return results
 
 def transformToBlade(results, num_blades):
-    
+
     '''
-    Transforms the forces and moments calculated at the blade root in the 
-    global reference frame into the blade local reference frame. Function also 
-    outputs everything into a dataframe for writing later. Lower case 
-    formatted variables (i.e. fx fy, fz, mz, ...) are global parameters upper 
+    Transforms the forces and moments calculated at the blade root in the
+    global reference frame into the blade local reference frame. Function also
+    outputs everything into a dataframe for writing later. Lower case
+    formatted variables (i.e. fx fy, fz, mz, ...) are global parameters upper
     caes (i.e. Fx Fy, Fz, Mz, ...) are blade reference frame parameters.
     '''
 
@@ -237,14 +237,14 @@ def transformToBlade(results, num_blades):
 
     return results
 
-def getGaugeDate(waterZ):    
+def getGaugeDate(waterZ):
     files = list(filter(lambda a: 'Gauge' in a, os.listdir("postProcessing/")))
     files.sort()
-    
+
     T  = []
     FS = []
-    
-    for file in files:     
+
+    for file in files:
         time_steps = os.listdir("postProcessing/"+file+"/")
         time_steps.sort()
         for time_step in time_steps:
@@ -260,27 +260,27 @@ def getGaugeDate(waterZ):
             fs   = data[-1,0] - waterZ
             T.append(t)
             FS.append(fs)
-    
+
     steps = int(len(T)/len(files))
     alpha_water = np.zeros((steps,len(files)+1))
     alpha_water[:,0] = T[0:steps]
     for i in range(len(files)):
         alpha_water[:,i+1] = FS[i*steps:i*steps+steps]
-    results = pd.DataFrame(alpha_water[:,1:])    
-    results.columns = files 
-    
+    results = pd.DataFrame(alpha_water[:,1:])
+    results.columns = files
+
     return results
 
-def joinResults(results1, results2):  
-    results = results1.join(results2)   
+def joinResults(results1, results2):
+    results = results1.join(results2)
     return results
 
 def writeOutputFile(results):
-    
+
     '''
     Simply writes results dataframe to csv file
     '''
-    
+
     with open('Results.csv', 'w') as f:
         for col in results.columns:
             f.write(col+',')
@@ -295,17 +295,21 @@ def writeOutputFile(results):
             f.write('\n')
     return
 
-def main():
-        
+def main(data_crop: bool=False):
+
     t, Az, Cp, blade_l, hub_x, hub_y, hub_z, hub_rad, waterZ = getVars()
-    
-    plt.figure()
-    plt.plot(t, Cp)
-    settle = plt.ginput(2)
-    plt.close()
-    start = NearestVal(t, settle[0][0])[1]
-    end = NearestVal(t, settle[1][0])[1]
-    
+
+    if data_crop == True:
+        plt.figure()
+        plt.plot(t, Cp)
+        settle = plt.ginput(2)
+        plt.close()
+        start = NearestVal(t, settle[0][0])[1]
+        end = NearestVal(t, settle[1][0])[1]
+    else:
+        start = 0
+        end = len(t)
+
     files, num_blades = getElementFiles()
     turbine_results = sumTurbineResults(t, Az,num_blades, files, hub_rad, hub_x, hub_y, hub_z)
     turbine_results = transformToBlade(turbine_results, num_blades)
@@ -313,14 +317,8 @@ def main():
     guage_results = getGaugeDate(waterZ)
     results = joinResults(turbine_results, guage_results)
     writeOutputFile(results)
-    
+
     return
 
 if __name__ == "__main__":
     main()
-                
-
-            
-        
-    
-        

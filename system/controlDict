@@ -241,7 +241,7 @@ functions
                 planeType pointAndNormal;
                 pointAndNormalDict
                 {
-                    point (0 -5.5 0);
+                    point (0 #calc "$y/2" 0);
                     normal (0 -1 0);
                 }
                 interpolate true;
@@ -252,7 +252,7 @@ functions
                 planeType pointAndNormal;
                 pointAndNormalDict
                 {
-                    point (5 0 0);
+                    point ($Hub_x 0 0);
                     normal (1 0 0);
                 }
                 interpolate true;
