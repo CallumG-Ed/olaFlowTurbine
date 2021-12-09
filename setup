@@ -15,7 +15,7 @@
 // "(2) Current only"
 
 choice       2;
-nCores      32; // Number of compute cores to solve on
+nCores      64; // Number of compute cores to solve on
 simEnd      90; // simulation end time
 dT       0.005; // time step
 /*---------------------------------------------------------------------------*/

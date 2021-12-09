@@ -32,9 +32,9 @@ deltaT          $dT;
 
 writeControl    adjustableRunTime;
 
-writeInterval   10;
+writeInterval   0.05;
 
-purgeWrite      0;
+purgeWrite      2;
 
 writeFormat     ascii;
 

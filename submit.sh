@@ -2,8 +2,8 @@
 # Grid Engine
 #$ -N oFT_TSR7_noWaves
 #$ -cwd
-#$ -pe mpi 32 -R y
-#$ -l h_vmem=4G
+#$ -pe mpi 64 -R y
+#$ -l h_vmem=8G
 #$ -M callum.guy@ed.ac.uk
 #$ -m beas
 #$ -V
