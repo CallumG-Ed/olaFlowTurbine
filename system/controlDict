@@ -229,7 +229,7 @@ functions
     {
         type              surfaces;
         outputControl     timeStep;
-        outputInterval     5;
+        outputInterval     2;
         surfaceFormat    vtk;
         fields   (U alpha.water force.turbine);
         interpolationScheme          cellPoint;
