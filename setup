@@ -17,7 +17,7 @@
 choice       2;
 nCores      64; // Number of compute cores to solve on
 simEnd      90; // simulation end time
-dT       0.005; // time step
+dT       0.001; // time step
 /*---------------------------------------------------------------------------*/
 
 

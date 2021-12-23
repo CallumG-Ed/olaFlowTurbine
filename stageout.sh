@@ -24,7 +24,7 @@ trap 'exit 99' sigusr1 sigusr2 sigterm
 # Source path on Eddie. It should be on the fast Eddie HPC filesystem, starting with one of:
 # /exports/csce/eddie, /exports/chss/eddie, /exports/cmvm/eddie, /exports/igmm/eddie or /exports/eddie/scratch,
 #
-SOURCE="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+SOURCE="$( cd "$( dirname "${BASH_SOURCE[0]}" )"/postProcessing >/dev/null 2>&1 && pwd )"
 #
 # Destination path on DataStore in the staging environment
 # Note: these paths are only available on the staging nodes
