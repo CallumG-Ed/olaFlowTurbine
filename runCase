@@ -66,9 +66,10 @@ fi
 # Check if simulation finished and clear up directory
 if [ -d "$directory$endTime" ]; then
   touch olaFlowTurbine.foam
-  mkdir logs
+  mkdir -p logs
   mv log.* logs
   python makeVTPseries.py
+  python mergePost.py
   python postProcess.py
   echo Simulation complete.
 fi

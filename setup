@@ -15,9 +15,9 @@
 // "(2) Current only"
 
 choice       2;
-nCores      64; // Number of compute cores to solve on
-simEnd      90; // simulation end time
-dT       0.001; // time step
+nCores      2; // Number of compute cores to solve on
+simEnd      1.75; // simulation end time
+dT       0.005; // time step
 /*---------------------------------------------------------------------------*/
 
 
@@ -30,9 +30,9 @@ y    -11.0;
 z      3.0;
 
 // discretisation
-nx    150;
-ny    165;
-nz     45;
+nx    20;
+ny    22;
+nz    6;
 
 freeSurface 2; // z position of free surface
 /*---------------------------------------------------------------------------*/

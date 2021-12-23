@@ -21,6 +21,7 @@ rm -fr pro* 2>/dev/null
 rm -fr postProcessing 2>/dev/null
 rm -fr logs 2>/dev/null
 rm log.* 2>/dev/null
+rm Results.csv 2>/dev/null
 rm *.foam 2>/dev/null
 rm constant/waveDict 2>/dev/null
 rm system/elementData 2>/dev/null

@@ -30,7 +30,7 @@ SOURCE="$( cd "$( dirname "${BASH_SOURCE[0]}" )"/postProcessing >/dev/null 2>&1 
 # Note: these paths are only available on the staging nodes
 # It should start with one of /exports/csce/datastore, /exports/chss/datastore, /exports/cmvm/datastore or /exports/igmm/datastore
 #
-DESTINATION=/exports/csce/datastore/eng/users/s1453918
+DESTINATION=/exports/csce/datastore/eng/groups/oFT
 
 # Perform copy with rsync
 # Note: do not use -p or -a (implies -p) as this can break file ACLs at the destination
