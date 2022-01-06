@@ -1,13 +1,19 @@
 import os
+import re
 import math
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+from natsort import natsorted
 
 def NearestVal(array, value):
     array = np.asarray(array)
     idx   = (np.abs(array - value)).argmin()
     return array[idx], idx
+
+def natsort_key(s, _nsre=re.compile('([0-9]+)')):
+    return [int(text) if text.isdigit() else text.lower()
+            for text in _nsre.split(s)]
 
 def getVars():
 
@@ -246,7 +252,7 @@ def getGaugeDate(waterZ):
 
     for file in files:
         time_steps = os.listdir("postProcessing/"+file+"/")
-        time_steps.sort()
+        time_steps = sorted(time_steps, key=natsort_key)
         for time_step in time_steps:
             t = float(time_step)
             l = []

@@ -1,11 +1,16 @@
 import os
+import re
+
+def natsort_key(s, _nsre=re.compile('([0-9]+)')):
+    return [int(text) if text.isdigit() else text.lower()
+            for text in _nsre.split(s)]
 
 def main():
     cutPlanesDir = "postProcessing/cuttingPlanes/"
 
     directories = os.listdir(cutPlanesDir)
-    directories.sort()
     directories = [d for d in directories if "series" not in d]
+    directories = sorted(directories, key=natsort_key)
 
     with open(cutPlanesDir+"yplane.vtp.series", 'w') as yf:
         yf.write("{\n")

@@ -8,6 +8,7 @@
 # Grid Engine options start with a #$
 #$ -N stageout
 #$ -cwd
+#$ -M callum.guy@ed.ac.uk
 # Choose the staging environment
 #$ -q staging
 
