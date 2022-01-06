@@ -4,7 +4,6 @@ import math
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-from natsort import natsorted
 
 def NearestVal(array, value):
     array = np.asarray(array)
