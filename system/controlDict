@@ -151,9 +151,9 @@ functions
             {
                 type uniform;
                 axis z;
-                start (5 $Hub_y 0);
+                start (5 $Hub_y 1.5);
                 end   (5 $Hub_y $z);
-                nPoints #calc "$z/0.001";
+                nPoints #calc "($z-1.5)/0.001";
             }
         );
 
@@ -229,7 +229,7 @@ functions
     {
         type              surfaces;
         outputControl     timeStep;
-        outputInterval     100;
+        outputInterval     10;
         surfaceFormat    vtk;
         fields   (U alpha.water force.turbine);
         interpolationScheme          cellPoint;
