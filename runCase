@@ -71,5 +71,7 @@ if [ -d "$directory$endTime" ]; then
   python makeVTPseries.py
   python mergePost.py
   python postProcess.py
+  rm -rf postProcessing/cuttingPlanes/*.[0-9]*
+  rm -rf postProcessing/Gauge*/*.[0-4]* postProcessing/Gauge*/*.[6-9]* postProcessing/Gauge*/*.5[0-9]*
   echo Simulation complete.
 fi
