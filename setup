@@ -15,9 +15,11 @@
 // "(2) Current only"
 
 choice       2;
-nCores      64; // Number of compute cores to solve on
-simEnd      90; // simulation end time
+nCores       2; // Number of compute cores to solve on
+simEnd      45; // simulation end time
 dT       0.005; // time step
+
+U_ref   0.7755; // velocity at reference height for log profile
 /*---------------------------------------------------------------------------*/
 
 
@@ -67,8 +69,9 @@ Hub_y            -5.5;
 Hub_z             1.0;  // hub height
 
 TSR               7.0;  // tip speed ratio
-U_mean           0.81;  // mean current streamwise (x)
+U_FS            0.805;  // mean current streamwise for setting turbine params
 rotor_R         0.594;  // rotor radius
+hub_R            0.06;  // hub radius
 rho            998.57;  // water density
 nStats             22;  // number of blade stations
 elementProfiles         // element profile polar files

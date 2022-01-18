@@ -30,7 +30,7 @@ turbine
         origin              ($Hub_x $Hub_y $Hub_z);
         axis                (-1 0 0);
         verticalDirection   (0 0 1);
-        freeStreamVelocity  ($U_mean 0 0);
+        freeStreamVelocity  ($U_FS 0 0);
         tipSpeedRatio       $TSR;
         rotorRadius         $rotor_R;
         rhoRef              $rho;
@@ -105,8 +105,8 @@ turbine
             //Info << "\n\n\n\n\n\nHub Radius: " << ${hubRadius} << "\n\n\n";
             elementData
             ( // axial distance, height, diameter
-                (0   $rotor_R  $rotor_R)
-                (0  #calc "-1*$rotor_R"  $rotor_R)
+                (0   $hub_R  $hub_R)
+                (0  #calc "-1*$hub_R"  $hub_R)
             );
         }
 
