@@ -16,7 +16,7 @@
 
 choice       2;
 nCores       2; // Number of compute cores to solve on
-simEnd      45; // simulation end time
+simEnd      5; // simulation end time
 dT       0.005; // time step
 
 U_ref   0.7755; // velocity at reference height for log profile

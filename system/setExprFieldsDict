@@ -25,7 +25,7 @@ expressions
         constants
         {
             water_level $freeSurface;
-            u_inf $U_mean;
+            u_inf $U_ref;
         }
 
         variables

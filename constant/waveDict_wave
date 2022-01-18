@@ -35,7 +35,7 @@ waveDir         $waveDir;
 
 wavePhase       $wavePhase;
 
-uCurrent        ($U_mean 0. 0.);
+uCurrent        ($U_ref 0. 0.);
 
 //tSmooth         0.25;
 
