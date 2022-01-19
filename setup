@@ -15,11 +15,11 @@
 // "(2) Current only"
 
 choice       2;
-nCores       2; // Number of compute cores to solve on
-simEnd      5; // simulation end time
+nCores      64; // Number of compute cores to solve on
+simEnd      60; // simulation end time
 dT       0.005; // time step
 
-U_ref   0.7755; // velocity at reference height for log profile
+U_ref   0.763556; // velocity at reference height for log profile
 /*---------------------------------------------------------------------------*/
 
 
@@ -40,9 +40,9 @@ y    -11.0;
 z      3.0;
 
 // discretisation
-nx    20;
-ny    22;
-nz     6;
+nx    100;
+ny    110;
+nz     30;
 
 freeSurface 2; // z position of free surface
 /*---------------------------------------------------------------------------*/
@@ -68,8 +68,8 @@ Hub_x             5.0;
 Hub_y            -5.5;
 Hub_z             1.0;  // hub height
 
-TSR               7.0;  // tip speed ratio
-U_FS            0.805;  // mean current streamwise for setting turbine params
+TSR             7.285;  // tip speed ratio
+U_FS          0.77623;  // mean current streamwise for setting turbine params
 rotor_R         0.594;  // rotor radius
 hub_R            0.06;  // hub radius
 rho            998.57;  // water density
