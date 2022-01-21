@@ -52,7 +52,7 @@ freeSurface 2; // z position of free surface
 // Wave parameters (if waves included in simulaton)
 /*---------------------------------------------------------------------------*/
 waveType        regular;
-waveTheory      stokesI;
+waveTheory      StokesI;
 waveHeight      0.1;
 wavePeriod      3.0;
 wavePhase       1.57079633;
