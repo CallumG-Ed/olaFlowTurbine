@@ -249,13 +249,17 @@ def getGaugeData():
     FS = []
 
     for file in files:
-        time_steps = os.listdir("postProcessing/"+file+"/")
-        time_steps = sorted(time_steps, key=natsort_key)
+        time_steps_str = os.listdir("postProcessing/"+file+"/")
+        time_steps = []
+        for time_step in time_steps_str:
+            time_steps.append(float(time_step))
+        time_steps.sort()
+
         for time_step in time_steps:
             t = float(time_step)
             l = []
             a = []
-            with open("postProcessing/"+file+"/"+time_step+"/data_alpha.water.xy") as f:
+            with open("postProcessing/"+file+"/"+('%f' % time_step).rstrip('0').rstrip('.')+"/data_alpha.water.xy") as f:
                 for line in f:
                     l.append(float(line.split()[0]))
                     a.append(float(line.split()[1]))

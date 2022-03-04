@@ -73,157 +73,158 @@ functions
 {
     Gauge1
     {
-        type sets;
-        writeControl timeStep;
-        outputInterval 1;
+        type    sets;
+        libs ("libsampling.so");
+        writeControl    timeStep;
+        writeInterval   1;
+        setFormat       raw;
+        surfaceFormat   raw;
         interpolationScheme cellPoint;
-        setFormat raw;
+        fields          ( alpha.water );
 
         sets
         (
             data
             {
-                type uniform;
+                type midPointAndFace;
                 axis z;
-                start (2.5 $Hub_y 0);
-                end   (2.5 $Hub_y $z);
-                nPoints #calc "$z/0.001";
+                start (2.500001 #calc "$Hub_y+0.000001" 0);
+                end   (2.500001 #calc "$Hub_y+0.000001" $z);
             }
         );
-
-    fields (alpha.water U);
     }
     Gauge2
     {
-        type sets;
-        writeControl timeStep;
-        outputInterval 1;
+        type    sets;
+        libs ("libsampling.so");
+        writeControl    timeStep;
+        writeInterval   1;
+        setFormat       raw;
+        surfaceFormat   raw;
         interpolationScheme cellPoint;
-        setFormat raw;
+        fields          ( alpha.water );
 
         sets
         (
             data
             {
-                type uniform;
+                type midPointAndFace;
                 axis z;
-                start (4 $Hub_y 0);
-                end   (4 $Hub_y $z);
-                nPoints #calc "$z/0.001";
+                start (4.000001 #calc "$Hub_y+0.000001" 0);
+                end   (4.000001 #calc "$Hub_y+0.000001" $z);
             }
         );
-
-    fields (alpha.water U);
     }
     Gauge3
     {
-        type sets;
-        writeControl timeStep;
-        outputInterval 1;
+        type    sets;
+        libs ("libsampling.so");
+        writeControl    timeStep;
+        writeInterval   1;
+        setFormat       raw;
+        surfaceFormat   raw;
         interpolationScheme cellPoint;
-        setFormat raw;
+        fields          ( alpha.water );
 
         sets
         (
             data
             {
-                type uniform;
+                type midPointAndFace;
                 axis z;
-                start (4.5 $Hub_y 0);
-                end   (4.5 $Hub_y $z);
+                start (4.500001 #calc "$Hub_y+0.000001" 0);
+                end   (4.500001 #calc "$Hub_y+0.000001" $z);
                 nPoints #calc "$z/0.001";
             }
         );
-
-    fields (alpha.water U);
     }
     Gauge4
     {
-        type sets;
-        writeControl timeStep;
-        outputInterval 1;
+        type    sets;
+        libs ("libsampling.so");
+        writeControl    timeStep;
+        writeInterval   1;
+        setFormat       raw;
+        surfaceFormat   raw;
         interpolationScheme cellPoint;
-        setFormat raw;
+        fields          ( alpha.water );
 
         sets
         (
             data
             {
-                type uniform;
+                type midPointAndFace;
                 axis z;
-                start (5 $Hub_y 1.5);
-                end   (5 $Hub_y $z);
-                nPoints #calc "($z-1.5)/0.001";
+                start (5.000001 #calc "$Hub_y+0.000001" 1.5);
+                end   (5.000001 #calc "$Hub_y+0.000001" $z);
             }
         );
-
-    fields (alpha.water U);
     }
     Gauge5
     {
-        type sets;
-        writeControl timeStep;
-        outputInterval 1;
+        type    sets;
+        libs ("libsampling.so");
+        writeControl    timeStep;
+        writeInterval   1;
+        setFormat       raw;
+        surfaceFormat   raw;
         interpolationScheme cellPoint;
-        setFormat raw;
+        fields          ( alpha.water );
 
         sets
         (
             data
             {
-                type uniform;
+                type midPointAndFace;
                 axis z;
-                start (5.5 $Hub_y 0);
-                end   (5.5 $Hub_y $z);
-                nPoints #calc "$z/0.001";
+                start (5.500001 #calc "$Hub_y+0.000001" 0);
+                end   (5.500001 #calc "$Hub_y+0.000001" $z);
             }
         );
-
-    fields (alpha.water U);
     }
     Gauge6
     {
-        type sets;
-        writeControl timeStep;
-        outputInterval 1;
+        type    sets;
+        libs ("libsampling.so");
+        writeControl    timeStep;
+        writeInterval   1;
+        setFormat       raw;
+        surfaceFormat   raw;
         interpolationScheme cellPoint;
-        setFormat raw;
+        fields          ( alpha.water );
 
         sets
         (
             data
             {
-                type uniform;
+                type midPointAndFace;
                 axis z;
-                start (6 $Hub_y 0);
-                end   (6 $Hub_y $z);
-                nPoints #calc "$z/0.001";
+                start (6.000001 #calc "$Hub_y+0.000001" 0);
+                end   (6.000001 #calc "$Hub_y+0.000001" $z);
             }
         );
-
-    fields (alpha.water U);
     }
     Gauge7
     {
-        type sets;
-        writeControl timeStep;
-        outputInterval 1;
+        type    sets;
+        libs ("libsampling.so");
+        writeControl    timeStep;
+        writeInterval   1;
+        setFormat       raw;
+        surfaceFormat   raw;
         interpolationScheme cellPoint;
-        setFormat raw;
+        fields          ( alpha.water );
 
         sets
         (
             data
             {
-                type uniform;
+                type midPointAndFace;
                 axis z;
-                start (7.5 $Hub_y 0);
-                end   (7.5 $Hub_y $z);
-                nPoints #calc "$z/0.001";
+                start (7.500001 #calc "$Hub_y+0.000001" 0);
+                end   (7.500001 #calc "$Hub_y+0.000001" $z);
             }
         );
-
-    fields (alpha.water U);
     }
     cuttingPlanes
     {
